@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 7 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Failed_suite__Smoke_TestSuite_">
+              <span class="suite-name border-failed">Failed suite [Smoke TestSuite]</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Failed_suite__Smoke_TestSuite_">
+                    <span>D:\Nitara Automation Farmer\AndroidAutomation_Farmer\test-output\Smoke TestSuite\testng-failed.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Failed_suite__Smoke_TestSuite_">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Failed_suite__Smoke_TestSuite_">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Failed_suite__Smoke_TestSuite_">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Failed_suite__Smoke_TestSuite_">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Failed_suite__Smoke_TestSuite_">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Failed_suite__Smoke_TestSuite_">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">10 methods, 7 failed,   3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Failed_suite__Smoke_TestSuite_" class="hide-methods failed suite-Failed_suite__Smoke_TestSuite_"> (hide)</a> <!-- hide-methods failed suite-Failed_suite__Smoke_TestSuite_ -->
+                      <a href="#" panel-name="suite-Failed_suite__Smoke_TestSuite_" class="show-methods failed suite-Failed_suite__Smoke_TestSuite_"> (show)</a> <!-- show-methods failed suite-Failed_suite__Smoke_TestSuite_ -->
+                    </span>
+                    <div class="method-list-content failed suite-Failed_suite__Smoke_TestSuite_">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Failed_suite__Smoke_TestSuite_" title="com.nitara.BreedingManagement.ViewCalving" hash-for-method="Calving_ViewData({calfGender1=Female, calfGender2=Male, testcase=Calving_ViewData, calfResult=Twins})">Calving_ViewData({calfGender1=Female, calfGender2=Male, testcase=Calving_ViewData, calfResult=Twins})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Failed_suite__Smoke_TestSuite_" title="com.nitara.BreedingManagement.DeleteHeat" hash-for-method="Heat_DeleteData({heatStartTime=10:30:PM, heatType=Natural, heatDate=20 Sep 2021, testcase=Heat_DeleteData})">Heat_DeleteData({heatStartTime=10:30:PM, heatType=Natural, heatDate=20 Sep 2021, testcase=Heat_DeleteData})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Failed_suite__Smoke_TestSuite_" title="com.nitara.MilkingMangement.RecordFarmMilkingData" hash-for-method="Milking_RecordCattleMilking">Milking_RecordCattleMilking</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Failed_suite__Smoke_TestSuite_" title="com.nitara.BreedingManagement.DeletePD" hash-for-method="PD_ViewData({isCattlePregnant=true, testcase=PD_ViewData})">PD_ViewData({isCattlePregnant=true, testcase=PD_ViewData})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Failed_suite__Smoke_TestSuite_" title="com.nitara.CattleManagement.RegisterMilkingorDryCattle" hash-for-method="RegisterCattle_MilkingorDryCattle({cattleType=Buffalo, inseminationDate=23 Aug 2020, calf2Gender=Female, inseminationType=Artificial, ...)">RegisterCattle_MilkingorDryCattle({cattleType=Buffalo, inseminationDate=23 Aug 2020, calf2Gender=Female, inseminationType=Artificial, ...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Failed_suite__Smoke_TestSuite_" title="com.nitara.DiseasePredictor.ReportDisease" hash-for-method="ReportDisease">ReportDisease</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Failed_suite__Smoke_TestSuite_" title="com.nitara.HealthManagement.ViewTreatment" hash-for-method="Treatment_ViewData({dosage=11, isAntibioticGiven=true, amount=50, disease=FMD, isFollowUpRequired=true, symptomsCount=3...)">Treatment_ViewData({dosage=11, isAntibioticGiven=true, amount=50, disease=FMD, isFollowUpRequired=true, symptomsCount=3...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Failed_suite__Smoke_TestSuite_ -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Failed_suite__Smoke_TestSuite_" class="hide-methods passed suite-Failed_suite__Smoke_TestSuite_"> (hide)</a> <!-- hide-methods passed suite-Failed_suite__Smoke_TestSuite_ -->
+                      <a href="#" panel-name="suite-Failed_suite__Smoke_TestSuite_" class="show-methods passed suite-Failed_suite__Smoke_TestSuite_"> (show)</a> <!-- show-methods passed suite-Failed_suite__Smoke_TestSuite_ -->
+                    </span>
+                    <div class="method-list-content passed suite-Failed_suite__Smoke_TestSuite_">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Failed_suite__Smoke_TestSuite_" title="com.nitara.CattleManagement.EditCattleProfile" hash-for-method="CattleProfile_EditData">CattleProfile_EditData</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Failed_suite__Smoke_TestSuite_" title="com.nitara.WeightManagement.EditWeight" hash-for-method="Weight_EditData({girth=60, length=80, calculateBy=Girth, testcase=Weight_EditData, dateOfWeight=12 Dec 2021})">Weight_EditData({girth=60, length=80, calculateBy=Girth, testcase=Weight_EditData, dateOfWeight=12 Dec 2021})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Failed_suite__Smoke_TestSuite_" title="com.nitara.WeightManagement.DeleteWeight" hash-for-method="Weight_ViewData({girth=60, length=80, calculateBy=Girth, testcase=Weight_ViewData, dateOfWeight=12 Dec 2021})">Weight_ViewData({girth=60, length=80, calculateBy=Girth, testcase=Weight_ViewData, dateOfWeight=12 Dec 2021})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Failed_suite__Smoke_TestSuite_ -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Failed_suite__Smoke_TestSuite_" class="panel Failed_suite__Smoke_TestSuite_">
+          <div class="suite-Failed_suite__Smoke_TestSuite_-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.nitara.HealthManagement.ViewTreatment</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Treatment_ViewData({dosage=11, isAntibioticGiven=true, amount=50, disease=FMD, isFollowUpRequired=true, symptomsCount=3...)">
+                  </a> <!-- Treatment_ViewData({dosage=11, isAntibioticGiven=true, amount=50, disease=FMD, isFollowUpRequired=true, symptomsCount=3...) -->
+                  <span class="method-name">Treatment_ViewData</span>
+                  <span class="parameters">({dosage=11, isAntibioticGiven=true, amount=50, disease=FMD, isFollowUpRequired=true, symptomsCount=3, medicine=med2, dateOfVisit=2 Nov 2021, testcase=Treatment_ViewData, followUpAfter=10, symptoms[1]=Coughing, symptoms[0]=Watery Eyes})</span>
+                  <div class="stack-trace">org.openqa.selenium.InvalidElementStateException: Cannot set the element to &apos;10&apos;. Did you interact with the correct element?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OB1OE1J&apos;, ip: &apos;192.168.72.17&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: D:\Nitara Automation Farmer..., appPackage: com.nitara.farmer.qa, automationName: uiautomator2, databaseEnabled: false, desired: {app: D:\Nitara Automation Farmer..., automationName: uiautomator2, deviceName: Oneplus, noReset: true, platformName: android, udid: de319e1e2346}, deviceApiLevel: 30, deviceManufacturer: Xiaomi, deviceModel: Mi A3, deviceName: de319e1e2346, deviceScreenDensity: 320, deviceScreenSize: 720x1560, deviceUDID: de319e1e2346, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noReset: true, pixelRatio: 2, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 70, takesScreenshot: true, udid: de319e1e2346, viewportRect: {height: 1341, left: 0, top: 70, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: e0e6a06c-56d0-47fa-bd7f-259a95e1bc86
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at io.appium.java_client.DefaultGenericMobileElement.execute(DefaultGenericMobileElement.java:45)
+	at io.appium.java_client.MobileElement.execute(MobileElement.java:1)
+	at io.appium.java_client.android.AndroidElement.execute(AndroidElement.java:1)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at io.appium.java_client.pagefactory.ElementInterceptor.getObject(ElementInterceptor.java:40)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:60)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.sendKeys(&lt;generated&gt;)
+	at com.nitara.PageObjects.BasePage.sendKeys(BasePage.java:98)
+	at com.nitara.PageObjects.Health_AddTreatmentPage.enter_followUpAfter(Health_AddTreatmentPage.java:119)
+	at com.nitara.PageObjects.Health_AddTreatmentPage.addTreatment(Health_AddTreatmentPage.java:163)
+	at com.nitara.HealthManagement.ViewTreatment.Treatment_ViewData(ViewTreatment.java:41)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Failed_suite__Smoke_TestSuite_-class-failed -->
+          <div class="suite-Failed_suite__Smoke_TestSuite_-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.nitara.BreedingManagement.ViewCalving</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Calving_ViewData({calfGender1=Female, calfGender2=Male, testcase=Calving_ViewData, calfResult=Twins})">
+                  </a> <!-- Calving_ViewData({calfGender1=Female, calfGender2=Male, testcase=Calving_ViewData, calfResult=Twins}) -->
+                  <span class="method-name">Calving_ViewData</span>
+                  <span class="parameters">({calfGender1=Female, calfGender2=Male, testcase=Calving_ViewData, calfResult=Twins})</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: maleRdBtn_single})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.getText(&lt;generated&gt;)
+	at com.nitara.PageObjects.Breeding_AddCalvingPage.select_CalfResultTwins(Breeding_AddCalvingPage.java:103)
+	at com.nitara.BreedingManagement.ViewCalving.Calving_ViewData(ViewCalving.java:42)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@140b729 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 32 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: maleRdBtn_single})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OB1OE1J&apos;, ip: &apos;192.168.72.17&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 34 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Failed_suite__Smoke_TestSuite_-class-failed -->
+          <div class="suite-Failed_suite__Smoke_TestSuite_-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.nitara.DiseasePredictor.ReportDisease</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="ReportDisease">
+                  </a> <!-- ReportDisease -->
+                  <span class="method-name">ReportDisease</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: search_farm_param})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.sendKeys(&lt;generated&gt;)
+	at com.nitara.PageObjects.BasePage.sendKeys(BasePage.java:98)
+	at com.nitara.PageObjects.SearchCattle_CattleListPage.searchCattle(SearchCattle_CattleListPage.java:22)
+	at appCommonClasses.Helper_AppNavigation.selectCattle(Helper_AppNavigation.java:123)
+	at com.nitara.DiseasePredictor.ReportDisease.ReportDisease(ReportDisease.java:30)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@1ec7020 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 34 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: search_farm_param})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OB1OE1J&apos;, ip: &apos;192.168.72.17&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 36 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Failed_suite__Smoke_TestSuite_-class-failed -->
+          <div class="suite-Failed_suite__Smoke_TestSuite_-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.nitara.CattleManagement.RegisterMilkingorDryCattle</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="RegisterCattle_MilkingorDryCattle({cattleType=Buffalo, inseminationDate=23 Aug 2020, calf2Gender=Female, inseminationType=Artificial, ...)">
+                  </a> <!-- RegisterCattle_MilkingorDryCattle({cattleType=Buffalo, inseminationDate=23 Aug 2020, calf2Gender=Female, inseminationType=Artificial, ...) -->
+                  <span class="method-name">RegisterCattle_MilkingorDryCattle</span>
+                  <span class="parameters">({cattleType=Buffalo, inseminationDate=23 Aug 2020, calf2Gender=Female, inseminationType=Artificial, isCattleDry=true, calfCount=Twins, pregnantSince=2, currentLactation=1, calf1Gender=Male, testcase=RegisterCattle_MilkingorDryCattle, breed=Gojri, lastCalvingDate=25 Jun 2020, dryPeriodDate=27 Oct 2020, isCrossBreed=false , isCattlePregnant=false, bullId=3450, isCattleInseminated=false, semenBrand=Amul})</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({By.id: select_cattle_tv}) (tried for 15 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.nitara.PageObjects.BasePage.waitVisibility(BasePage.java:228)
+	at com.nitara.PageObjects.RegisterCattle_MilkingCattlePage.assert_CattleType(RegisterCattle_MilkingCattlePage.java:132)
+	at com.nitara.CattleManagement.RegisterMilkingorDryCattle.RegisterCattle_MilkingorDryCattle(RegisterMilkingorDryCattle.java:24)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: select_cattle_tv})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(&lt;generated&gt;)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 31 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@1dcf1b6 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 38 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: select_cattle_tv})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OB1OE1J&apos;, ip: &apos;192.168.72.17&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 40 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Failed_suite__Smoke_TestSuite_-class-failed -->
+          <div class="suite-Failed_suite__Smoke_TestSuite_-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.nitara.BreedingManagement.DeletePD</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="PD_ViewData({isCattlePregnant=true, testcase=PD_ViewData})">
+                  </a> <!-- PD_ViewData({isCattlePregnant=true, testcase=PD_ViewData}) -->
+                  <span class="method-name">PD_ViewData</span>
+                  <span class="parameters">({isCattlePregnant=true, testcase=PD_ViewData})</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [200] but found [500]
+	at com.nitara.APIFunctions.RegisterMilkingCattle.registerMilkingOrDryCattle(RegisterMilkingCattle.java:71)
+	at com.nitara.BreedingManagement.DeletePD.PD_ViewData(DeletePD.java:20)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Failed_suite__Smoke_TestSuite_-class-failed -->
+          <div class="suite-Failed_suite__Smoke_TestSuite_-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.nitara.BreedingManagement.DeleteHeat</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Heat_DeleteData({heatStartTime=10:30:PM, heatType=Natural, heatDate=20 Sep 2021, testcase=Heat_DeleteData})">
+                  </a> <!-- Heat_DeleteData({heatStartTime=10:30:PM, heatType=Natural, heatDate=20 Sep 2021, testcase=Heat_DeleteData}) -->
+                  <span class="method-name">Heat_DeleteData</span>
+                  <span class="parameters">({heatStartTime=10:30:PM, heatType=Natural, heatDate=20 Sep 2021, testcase=Heat_DeleteData})</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Heat data recorded on 20 Sep 2021 has been deleted] but found [Unknown error occurred. Try again.]
+	at com.nitara.PageObjects.Breeding_TimelinePage.assertDeleteMsg(Breeding_TimelinePage.java:121)
+	at com.nitara.BreedingManagement.DeleteHeat.Heat_DeleteData(DeleteHeat.java:43)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Failed_suite__Smoke_TestSuite_-class-failed -->
+          <div class="suite-Failed_suite__Smoke_TestSuite_-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.nitara.MilkingMangement.RecordFarmMilkingData</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Milking_RecordCattleMilking">
+                  </a> <!-- Milking_RecordCattleMilking -->
+                  <span class="method-name">Milking_RecordCattleMilking</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: dateValue})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.clear(&lt;generated&gt;)
+	at com.nitara.PageObjects.Milking_RecordFarmMilkingPage.enter_FarmMilkingDate(Milking_RecordFarmMilkingPage.java:62)
+	at com.nitara.MilkingMangement.RecordFarmMilkingData.Milking_RecordCattleMilking(RecordFarmMilkingData.java:20)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@12610ad (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 32 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: dateValue})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OB1OE1J&apos;, ip: &apos;192.168.72.17&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 34 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Failed_suite__Smoke_TestSuite_-class-failed -->
+          <div class="suite-Failed_suite__Smoke_TestSuite_-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.nitara.CattleManagement.EditCattleProfile</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="CattleProfile_EditData">
+                  </a> <!-- CattleProfile_EditData -->
+                  <span class="method-name">CattleProfile_EditData</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Failed_suite__Smoke_TestSuite_-class-passed -->
+          <div class="suite-Failed_suite__Smoke_TestSuite_-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.nitara.WeightManagement.DeleteWeight</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Weight_ViewData({girth=60, length=80, calculateBy=Girth, testcase=Weight_ViewData, dateOfWeight=12 Dec 2021})">
+                  </a> <!-- Weight_ViewData({girth=60, length=80, calculateBy=Girth, testcase=Weight_ViewData, dateOfWeight=12 Dec 2021}) -->
+                  <span class="method-name">Weight_ViewData</span>
+                  <span class="parameters">({girth=60, length=80, calculateBy=Girth, testcase=Weight_ViewData, dateOfWeight=12 Dec 2021})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Failed_suite__Smoke_TestSuite_-class-passed -->
+          <div class="suite-Failed_suite__Smoke_TestSuite_-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.nitara.WeightManagement.EditWeight</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Weight_EditData({girth=60, length=80, calculateBy=Girth, testcase=Weight_EditData, dateOfWeight=12 Dec 2021})">
+                  </a> <!-- Weight_EditData({girth=60, length=80, calculateBy=Girth, testcase=Weight_EditData, dateOfWeight=12 Dec 2021}) -->
+                  <span class="method-name">Weight_EditData</span>
+                  <span class="parameters">({girth=60, length=80, calculateBy=Girth, testcase=Weight_EditData, dateOfWeight=12 Dec 2021})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Failed_suite__Smoke_TestSuite_-class-passed -->
+        </div> <!-- panel Failed_suite__Smoke_TestSuite_ -->
+        <div panel-name="test-xml-Failed_suite__Smoke_TestSuite_" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">D:\Nitara Automation Farmer\AndroidAutomation_Farmer\test-output\Smoke TestSuite\testng-failed.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Failed suite [Smoke TestSuite]&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Smoke(failed)&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.nitara.BreedingManagement.DeleteHeat&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;quit&quot;/&gt;
+          &lt;include name=&quot;Heat_DeleteData&quot; invocation-numbers=&quot;0&quot;/&gt;
+          &lt;include name=&quot;initialize&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.nitara.BreedingManagement.DeleteHeat --&gt;
+      &lt;class name=&quot;com.nitara.DiseasePredictor.ReportDisease&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;ReportDisease&quot;/&gt;
+          &lt;include name=&quot;quit&quot;/&gt;
+          &lt;include name=&quot;initialize&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.nitara.DiseasePredictor.ReportDisease --&gt;
+      &lt;class name=&quot;com.nitara.WeightManagement.DeleteWeight&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;quit&quot;/&gt;
+          &lt;include name=&quot;Weight_ViewData&quot; invocation-numbers=&quot;0&quot;/&gt;
+          &lt;include name=&quot;initialize&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.nitara.WeightManagement.DeleteWeight --&gt;
+      &lt;class name=&quot;com.nitara.CattleManagement.RegisterMilkingorDryCattle&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;RegisterCattle_MilkingorDryCattle&quot; invocation-numbers=&quot;0&quot;/&gt;
+          &lt;include name=&quot;quit&quot;/&gt;
+          &lt;include name=&quot;initialize&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.nitara.CattleManagement.RegisterMilkingorDryCattle --&gt;
+      &lt;class name=&quot;com.nitara.WeightManagement.EditWeight&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;quit&quot;/&gt;
+          &lt;include name=&quot;Weight_EditData&quot; invocation-numbers=&quot;0&quot;/&gt;
+          &lt;include name=&quot;initialize&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.nitara.WeightManagement.EditWeight --&gt;
+      &lt;class name=&quot;com.nitara.BreedingManagement.DeletePD&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;PD_ViewData&quot; invocation-numbers=&quot;0&quot;/&gt;
+          &lt;include name=&quot;quit&quot;/&gt;
+          &lt;include name=&quot;initialize&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.nitara.BreedingManagement.DeletePD --&gt;
+      &lt;class name=&quot;com.nitara.BreedingManagement.ViewCalving&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;Calving_ViewData&quot; invocation-numbers=&quot;0&quot;/&gt;
+          &lt;include name=&quot;quit&quot;/&gt;
+          &lt;include name=&quot;initialize&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.nitara.BreedingManagement.ViewCalving --&gt;
+      &lt;class name=&quot;com.nitara.MilkingMangement.RecordFarmMilkingData&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;quit&quot;/&gt;
+          &lt;include name=&quot;Milking_RecordCattleMilking&quot;/&gt;
+          &lt;include name=&quot;initialize&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.nitara.MilkingMangement.RecordFarmMilkingData --&gt;
+      &lt;class name=&quot;com.nitara.HealthManagement.ViewTreatment&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;quit&quot;/&gt;
+          &lt;include name=&quot;Treatment_ViewData&quot; invocation-numbers=&quot;0&quot;/&gt;
+          &lt;include name=&quot;initialize&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.nitara.HealthManagement.ViewTreatment --&gt;
+      &lt;class name=&quot;com.nitara.CattleManagement.EditCattleProfile&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;quit&quot;/&gt;
+          &lt;include name=&quot;CattleProfile_EditData&quot;/&gt;
+          &lt;include name=&quot;initialize&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.nitara.CattleManagement.EditCattleProfile --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Smoke(failed) --&gt;
+&lt;/suite&gt; &lt;!-- Failed suite [Smoke TestSuite] --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Failed_suite__Smoke_TestSuite_" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Failed suite [Smoke TestSuite]</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Smoke(failed) (10 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Failed_suite__Smoke_TestSuite_" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Failed suite [Smoke TestSuite]</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Failed_suite__Smoke_TestSuite_" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Failed suite [Smoke TestSuite]</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Failed_suite__Smoke_TestSuite_');
+function tableData_Failed_suite__Smoke_TestSuite_() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(10);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'Milking_RecordCattleMilking')
+data.setCell(0, 2, 'com.nitara.MilkingMangement.RecordFarmMilkingData')
+data.setCell(0, 3, 139403);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'Calving_ViewData')
+data.setCell(1, 2, 'com.nitara.BreedingManagement.ViewCalving')
+data.setCell(1, 3, 135062);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'RegisterCattle_MilkingorDryCattle')
+data.setCell(2, 2, 'com.nitara.CattleManagement.RegisterMilkingorDryCattle')
+data.setCell(2, 3, 106091);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'Treatment_ViewData')
+data.setCell(3, 2, 'com.nitara.HealthManagement.ViewTreatment')
+data.setCell(3, 3, 101587);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'Heat_DeleteData')
+data.setCell(4, 2, 'com.nitara.BreedingManagement.DeleteHeat')
+data.setCell(4, 3, 53491);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'Weight_ViewData')
+data.setCell(5, 2, 'com.nitara.WeightManagement.DeleteWeight')
+data.setCell(5, 3, 49451);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'Weight_EditData')
+data.setCell(6, 2, 'com.nitara.WeightManagement.EditWeight')
+data.setCell(6, 3, 48966);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'CattleProfile_EditData')
+data.setCell(7, 2, 'com.nitara.CattleManagement.EditCattleProfile')
+data.setCell(7, 3, 46863);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'ReportDisease')
+data.setCell(8, 2, 'com.nitara.DiseasePredictor.ReportDisease')
+data.setCell(8, 3, 38994);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'PD_ViewData')
+data.setCell(9, 2, 'com.nitara.BreedingManagement.DeletePD')
+data.setCell(9, 3, 1954);
+window.suiteTableData['Failed_suite__Smoke_TestSuite_']= { tableData: data, tableDiv: 'times-div-Failed_suite__Smoke_TestSuite_'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 12 minutes</span>
+              <div id="times-div-Failed_suite__Smoke_TestSuite_">
+              </div> <!-- times-div-Failed_suite__Smoke_TestSuite_ -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Failed_suite__Smoke_TestSuite_" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Failed suite [Smoke TestSuite]</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Failed_suite__Smoke_TestSuite_" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Failed_suite__Smoke_TestSuite_" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nitara.BreedingManagement.DeleteHeat</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">initialize</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Heat_DeleteData({heatStartTime=10:30:PM, heatType=Natural, heatDate=20 Sep 2021, testcase=Heat_DeleteData})</span>
+                <span class="method-start">16525 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">quit</span>
+                <span class="method-start">70023 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nitara.DiseasePredictor.ReportDisease</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">initialize</span>
+                <span class="method-start">70590 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">ReportDisease</span>
+                <span class="method-start">82354 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">quit</span>
+                <span class="method-start">121350 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nitara.WeightManagement.DeleteWeight</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">initialize</span>
+                <span class="method-start">121895 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Weight_ViewData({girth=60, length=80, calculateBy=Girth, testcase=Weight_ViewData, dateOfWeight=12 Dec 2021})</span>
+                <span class="method-start">133384 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">quit</span>
+                <span class="method-start">182835 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nitara.CattleManagement.RegisterMilkingorDryCattle</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">initialize</span>
+                <span class="method-start">183417 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">RegisterCattle_MilkingorDryCattle({cattleType=Buffalo, inseminationDate=23 Aug 2020, calf2Gender=Female, inseminationType=Artificial, ...)</span>
+                <span class="method-start">195512 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">quit</span>
+                <span class="method-start">301604 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nitara.WeightManagement.EditWeight</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">initialize</span>
+                <span class="method-start">302173 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Weight_EditData({girth=60, length=80, calculateBy=Girth, testcase=Weight_EditData, dateOfWeight=12 Dec 2021})</span>
+                <span class="method-start">314148 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">quit</span>
+                <span class="method-start">363114 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nitara.BreedingManagement.DeletePD</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">initialize</span>
+                <span class="method-start">363659 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">PD_ViewData({isCattlePregnant=true, testcase=PD_ViewData})</span>
+                <span class="method-start">375579 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">quit</span>
+                <span class="method-start">377536 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nitara.BreedingManagement.ViewCalving</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">initialize</span>
+                <span class="method-start">377930 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Calving_ViewData({calfGender1=Female, calfGender2=Male, testcase=Calving_ViewData, calfResult=Twins})</span>
+                <span class="method-start">389877 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">quit</span>
+                <span class="method-start">524940 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nitara.MilkingMangement.RecordFarmMilkingData</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">initialize</span>
+                <span class="method-start">525475 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Milking_RecordCattleMilking</span>
+                <span class="method-start">537410 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">quit</span>
+                <span class="method-start">676814 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nitara.HealthManagement.ViewTreatment</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">initialize</span>
+                <span class="method-start">677394 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Treatment_ViewData({dosage=11, isAntibioticGiven=true, amount=50, disease=FMD, isFollowUpRequired=true, symptomsCount=3...)</span>
+                <span class="method-start">689083 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">quit</span>
+                <span class="method-start">790671 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nitara.CattleManagement.EditCattleProfile</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">initialize</span>
+                <span class="method-start">791251 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">CattleProfile_EditData</span>
+                <span class="method-start">803679 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">quit</span>
+                <span class="method-start">850543 ms</span>
+              </div> <!-- configuration-method after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">Failed suite [Smoke TestSuite]</th></tr>
+<tr><td><a href="#t0">Smoke(failed)</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num attn">7</td><td class="num">851,546</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Failed suite [Smoke TestSuite]</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Smoke(failed) &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.nitara.BreedingManagement.DeleteHeat</td><td><a href="#m0">Heat_DeleteData</a></td><td rowspan="1">1653281149002</td><td rowspan="1">53491</td></tr><tr class="failedodd"><td rowspan="1">com.nitara.BreedingManagement.DeletePD</td><td><a href="#m1">PD_ViewData</a></td><td rowspan="1">1653281508056</td><td rowspan="1">1954</td></tr><tr class="failedeven"><td rowspan="1">com.nitara.BreedingManagement.ViewCalving</td><td><a href="#m2">Calving_ViewData</a></td><td rowspan="1">1653281522354</td><td rowspan="1">135062</td></tr><tr class="failedodd"><td rowspan="1">com.nitara.CattleManagement.RegisterMilkingorDryCattle</td><td><a href="#m3">RegisterCattle_MilkingorDryCattle</a></td><td rowspan="1">1653281327989</td><td rowspan="1">106091</td></tr><tr class="failedeven"><td rowspan="1">com.nitara.DiseasePredictor.ReportDisease</td><td><a href="#m4">ReportDisease</a></td><td rowspan="1">1653281214831</td><td rowspan="1">38994</td></tr><tr class="failedodd"><td rowspan="1">com.nitara.HealthManagement.ViewTreatment</td><td><a href="#m5">Treatment_ViewData</a></td><td rowspan="1">1653281821560</td><td rowspan="1">101587</td></tr><tr class="failedeven"><td rowspan="1">com.nitara.MilkingMangement.RecordFarmMilkingData</td><td><a href="#m6">Milking_RecordCattleMilking</a></td><td rowspan="1">1653281669887</td><td rowspan="1">139403</td></tr><tr><th colspan="4">Smoke(failed) &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.nitara.CattleManagement.EditCattleProfile</td><td><a href="#m7">CattleProfile_EditData</a></td><td rowspan="1">1653281936156</td><td rowspan="1">46863</td></tr><tr class="passedodd"><td rowspan="1">com.nitara.WeightManagement.DeleteWeight</td><td><a href="#m8">Weight_ViewData</a></td><td rowspan="1">1653281265861</td><td rowspan="1">49451</td></tr><tr class="passedeven"><td rowspan="1">com.nitara.WeightManagement.EditWeight</td><td><a href="#m9">Weight_EditData</a></td><td rowspan="1">1653281446625</td><td rowspan="1">48966</td></tr></tbody>
+</table>
+<h2>Smoke(failed)</h2><h3 id="m0">com.nitara.BreedingManagement.DeleteHeat#Heat_DeleteData</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{heatStartTime=10:30:PM, heatType=Natural, heatDate=20 Sep 2021, testcase=Heat_DeleteData}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [Heat data recorded on 20 Sep 2021 has been deleted] but found [Unknown error occurred. Try again.]
+	at com.nitara.PageObjects.Breeding_TimelinePage.assertDeleteMsg(Breeding_TimelinePage.java:121)
+	at com.nitara.BreedingManagement.DeleteHeat.Heat_DeleteData(DeleteHeat.java:43)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.nitara.BreedingManagement.DeletePD#PD_ViewData</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{isCattlePregnant=true, testcase=PD_ViewData}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [200] but found [500]
+	at com.nitara.APIFunctions.RegisterMilkingCattle.registerMilkingOrDryCattle(RegisterMilkingCattle.java:71)
+	at com.nitara.BreedingManagement.DeletePD.PD_ViewData(DeletePD.java:20)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.nitara.BreedingManagement.ViewCalving#Calving_ViewData</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{calfGender1=Female, calfGender2=Male, testcase=Calving_ViewData, calfResult=Twins}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: maleRdBtn_single})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.getText(&lt;generated&gt;)
+	at com.nitara.PageObjects.Breeding_AddCalvingPage.select_CalfResultTwins(Breeding_AddCalvingPage.java:103)
+	at com.nitara.BreedingManagement.ViewCalving.Calving_ViewData(ViewCalving.java:42)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@140b729 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 32 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: maleRdBtn_single})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OB1OE1J&apos;, ip: &apos;192.168.72.17&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 34 more
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.nitara.CattleManagement.RegisterMilkingorDryCattle#RegisterCattle_MilkingorDryCattle</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{cattleType=Buffalo, inseminationDate=23 Aug 2020, calf2Gender=Female, inseminationType=Artificial, isCattleDry=true, calfCount=Twins, pregnantSince=2, currentLactation=1, calf1Gender=Male, testcase=RegisterCattle_MilkingorDryCattle, breed=Gojri, lastCalvingDate=25 Jun 2020, dryPeriodDate=27 Oct 2020, isCrossBreed=false , isCattlePregnant=false, bullId=3450, isCattleInseminated=false, semenBrand=Amul}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({By.id: select_cattle_tv}) (tried for 15 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.nitara.PageObjects.BasePage.waitVisibility(BasePage.java:228)
+	at com.nitara.PageObjects.RegisterCattle_MilkingCattlePage.assert_CattleType(RegisterCattle_MilkingCattlePage.java:132)
+	at com.nitara.CattleManagement.RegisterMilkingorDryCattle.RegisterCattle_MilkingorDryCattle(RegisterMilkingorDryCattle.java:24)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: select_cattle_tv})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(&lt;generated&gt;)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 31 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@1dcf1b6 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 38 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: select_cattle_tv})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OB1OE1J&apos;, ip: &apos;192.168.72.17&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 40 more
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.nitara.DiseasePredictor.ReportDisease#ReportDisease</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: search_farm_param})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.sendKeys(&lt;generated&gt;)
+	at com.nitara.PageObjects.BasePage.sendKeys(BasePage.java:98)
+	at com.nitara.PageObjects.SearchCattle_CattleListPage.searchCattle(SearchCattle_CattleListPage.java:22)
+	at appCommonClasses.Helper_AppNavigation.selectCattle(Helper_AppNavigation.java:123)
+	at com.nitara.DiseasePredictor.ReportDisease.ReportDisease(ReportDisease.java:30)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@1ec7020 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 34 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: search_farm_param})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OB1OE1J&apos;, ip: &apos;192.168.72.17&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 36 more
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.nitara.HealthManagement.ViewTreatment#Treatment_ViewData</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{dosage=11, isAntibioticGiven=true, amount=50, disease=FMD, isFollowUpRequired=true, symptomsCount=3, medicine=med2, dateOfVisit=2 Nov 2021, testcase=Treatment_ViewData, followUpAfter=10, symptoms[1]=Coughing, symptoms[0]=Watery Eyes}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.InvalidElementStateException: Cannot set the element to &apos;10&apos;. Did you interact with the correct element?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OB1OE1J&apos;, ip: &apos;192.168.72.17&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: D:\Nitara Automation Farmer..., appPackage: com.nitara.farmer.qa, automationName: uiautomator2, databaseEnabled: false, desired: {app: D:\Nitara Automation Farmer..., automationName: uiautomator2, deviceName: Oneplus, noReset: true, platformName: android, udid: de319e1e2346}, deviceApiLevel: 30, deviceManufacturer: Xiaomi, deviceModel: Mi A3, deviceName: de319e1e2346, deviceScreenDensity: 320, deviceScreenSize: 720x1560, deviceUDID: de319e1e2346, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noReset: true, pixelRatio: 2, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 70, takesScreenshot: true, udid: de319e1e2346, viewportRect: {height: 1341, left: 0, top: 70, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: e0e6a06c-56d0-47fa-bd7f-259a95e1bc86
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at io.appium.java_client.DefaultGenericMobileElement.execute(DefaultGenericMobileElement.java:45)
+	at io.appium.java_client.MobileElement.execute(MobileElement.java:1)
+	at io.appium.java_client.android.AndroidElement.execute(AndroidElement.java:1)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at io.appium.java_client.pagefactory.ElementInterceptor.getObject(ElementInterceptor.java:40)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:60)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.sendKeys(&lt;generated&gt;)
+	at com.nitara.PageObjects.BasePage.sendKeys(BasePage.java:98)
+	at com.nitara.PageObjects.Health_AddTreatmentPage.enter_followUpAfter(Health_AddTreatmentPage.java:119)
+	at com.nitara.PageObjects.Health_AddTreatmentPage.addTreatment(Health_AddTreatmentPage.java:163)
+	at com.nitara.HealthManagement.ViewTreatment.Treatment_ViewData(ViewTreatment.java:41)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.nitara.MilkingMangement.RecordFarmMilkingData#Milking_RecordCattleMilking</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: dateValue})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.clear(&lt;generated&gt;)
+	at com.nitara.PageObjects.Milking_RecordFarmMilkingPage.enter_FarmMilkingDate(Milking_RecordFarmMilkingPage.java:62)
+	at com.nitara.MilkingMangement.RecordFarmMilkingData.Milking_RecordCattleMilking(RecordFarmMilkingData.java:20)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@12610ad (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 32 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: dateValue})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OB1OE1J&apos;, ip: &apos;192.168.72.17&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 34 more
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">com.nitara.CattleManagement.EditCattleProfile#CattleProfile_EditData</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">com.nitara.WeightManagement.DeleteWeight#Weight_ViewData</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{girth=60, length=80, calculateBy=Girth, testcase=Weight_ViewData, dateOfWeight=12 Dec 2021}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">com.nitara.WeightManagement.EditWeight#Weight_EditData</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{girth=60, length=80, calculateBy=Girth, testcase=Weight_EditData, dateOfWeight=12 Dec 2021}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

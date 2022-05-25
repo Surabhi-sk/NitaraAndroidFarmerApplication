@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Smoke TestSuite]">
+  <test thread-count="5" name="Smoke(failed)">
+    <classes>
+      <class name="com.nitara.BreedingManagement.DeleteHeat">
+        <methods>
+          <include name="quit"/>
+          <include name="Heat_DeleteData" invocation-numbers="0"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.nitara.BreedingManagement.DeleteHeat -->
+      <class name="com.nitara.DiseasePredictor.ReportDisease">
+        <methods>
+          <include name="ReportDisease"/>
+          <include name="quit"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.nitara.DiseasePredictor.ReportDisease -->
+      <class name="com.nitara.WeightManagement.DeleteWeight">
+        <methods>
+          <include name="quit"/>
+          <include name="Weight_ViewData" invocation-numbers="0"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.nitara.WeightManagement.DeleteWeight -->
+      <class name="com.nitara.CattleManagement.RegisterMilkingorDryCattle">
+        <methods>
+          <include name="RegisterCattle_MilkingorDryCattle" invocation-numbers="0"/>
+          <include name="quit"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.nitara.CattleManagement.RegisterMilkingorDryCattle -->
+      <class name="com.nitara.WeightManagement.EditWeight">
+        <methods>
+          <include name="quit"/>
+          <include name="Weight_EditData" invocation-numbers="0"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.nitara.WeightManagement.EditWeight -->
+      <class name="com.nitara.BreedingManagement.DeletePD">
+        <methods>
+          <include name="PD_ViewData" invocation-numbers="0"/>
+          <include name="quit"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.nitara.BreedingManagement.DeletePD -->
+      <class name="com.nitara.BreedingManagement.ViewCalving">
+        <methods>
+          <include name="Calving_ViewData" invocation-numbers="0"/>
+          <include name="quit"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.nitara.BreedingManagement.ViewCalving -->
+      <class name="com.nitara.MilkingMangement.RecordFarmMilkingData">
+        <methods>
+          <include name="quit"/>
+          <include name="Milking_RecordCattleMilking"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.nitara.MilkingMangement.RecordFarmMilkingData -->
+      <class name="com.nitara.HealthManagement.ViewTreatment">
+        <methods>
+          <include name="quit"/>
+          <include name="Treatment_ViewData" invocation-numbers="0"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.nitara.HealthManagement.ViewTreatment -->
+      <class name="com.nitara.CattleManagement.EditCattleProfile">
+        <methods>
+          <include name="quit"/>
+          <include name="CattleProfile_EditData"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.nitara.CattleManagement.EditCattleProfile -->
+    </classes>
+  </test> <!-- Smoke(failed) -->
+</suite> <!-- Failed suite [Smoke TestSuite] -->
