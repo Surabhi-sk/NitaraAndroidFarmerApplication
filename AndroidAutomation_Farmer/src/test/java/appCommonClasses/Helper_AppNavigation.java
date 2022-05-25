@@ -139,17 +139,6 @@ public class Helper_AppNavigation extends PageInitialiser{
 
 	}
 	
-	public void goTo_SelectionofShedTypePage() throws Throwable
-	{
-		createshed.Clickhousingbtn();
-		
-		createshed.ClickAddShedbtn();
-		
-		/*createshed.entershedname(shedname);
-		
-		createshed.clicknextbtn();		*/
-	
-	}
 	
 	
 }
