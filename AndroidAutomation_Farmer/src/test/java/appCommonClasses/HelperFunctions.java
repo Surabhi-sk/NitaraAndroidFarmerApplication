@@ -236,41 +236,8 @@ public class HelperFunctions extends PageInitialiser{
 		breedingSuccessPage.homeButton();
 	}
 	
-	public String   CreateSmartshed() throws Throwable
-	{	
-			helper_AppNavigation.goTo_SelectionofShedTypePage();
-		
-			GenerateRandomData numb = new GenerateRandomData();
-
-			String  name = numb.generateRandomNumber(7);
-		 	/** Enter Smartshedname and Create shed */		
-			System.out.println(name);
-			createshed.entershedname(name);
-			createshed.clicknextbtn();					
-			createshed.clicksmartshedbtn();
-			createshed.Clickcheckbox();			
-			createshed.clickcreatesmartshedbtn();
-			
-			return name;
-	}
+	
 	
 
-	public String   CreateUserdefinedshed() throws Throwable
-	{	
-			helper_AppNavigation.goTo_SelectionofShedTypePage();
-		
-			GenerateRandomData numb = new GenerateRandomData();
-
-			String  name = numb.generateRandomNumber(7);
-		 	/** Enter Smartshedname and Create shed */		
-			System.out.println(name);
-			createshed.entershedname(name);
-			createshed.clicknextbtn();					
-			createshed.clicksmartshedbtn();
-			createshed.Clickcheckbox();			
-			createshed.clickcreatesmartshedbtn();
-			
-			return name;
-	}
 	
 }
