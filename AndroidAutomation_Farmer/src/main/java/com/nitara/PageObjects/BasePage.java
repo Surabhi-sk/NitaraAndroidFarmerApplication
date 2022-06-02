@@ -202,18 +202,36 @@ public class BasePage {
 		Thread.sleep(4000);
 	}
 
-	public void waitForPageLoad(MobileElement locator) throws Exception {
-		WebDriverWait wait = new WebDriverWait(driver, TestUtils.WAIT);
-		wait.until(ExpectedConditions.invisibilityOf(locator));
+// 	public void waitForPageLoad(MobileElement locator) throws Exception {
+// 		WebDriverWait wait = new WebDriverWait(driver, TestUtils.WAIT);
+// 		wait.until(ExpectedConditions.invisibilityOf(locator));
+// 	}
+	
+// 	public void waitForPageLoad(){
+// 		try {
+// 			Thread.sleep(5000);
+// 		} catch (InterruptedException e) {
+// 			// TODO Auto-generated catch block
+// 			e.printStackTrace();
+// 		}
+// 	}
+	
+	public void waitForPageLoad(){	
+		try {
+			List<WebElement> progress_bar=  (List<WebElement>) driver.findElements(By.id("request_in_progress_bar"));
+			if(progress_bar.size()>0) {
+				WebDriverWait wait = new WebDriverWait(driver, TestUtils.WAIT);
+				wait.until(ExpectedConditions.invisibilityOf(progress_bar.get(0)));
+			}
+						
+		} catch (NoSuchElementException e){
+
+		}
+		
 	}
 	
-	public void waitForPageLoad(){
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void waitForSmallPageLoad() {
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
 	
 
