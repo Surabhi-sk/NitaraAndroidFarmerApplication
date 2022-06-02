@@ -36,7 +36,7 @@ public class GenericBase extends PageInitialiser{
 		}
 	}
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	public static void initialize() throws Exception {
 	
 		GlobalParams params = new GlobalParams();
@@ -51,7 +51,7 @@ public class GenericBase extends PageInitialiser{
 		PageInitialiser.initializeAllPages();
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	public static void quit() throws InterruptedException{
 		DriverManager driverManager = new DriverManager();
 		if(driverManager.getDriver() != null){
