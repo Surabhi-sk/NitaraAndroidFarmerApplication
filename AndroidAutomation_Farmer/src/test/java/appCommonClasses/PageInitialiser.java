@@ -173,6 +173,7 @@ public class PageInitialiser{
 		cattleMilkingSuccessPage = new Milking_RecordCattleMilkingSuccessPage();
 		farmMilkingPage = new Milking_RecordFarmMilkingPage();
 		farmMilkingSuccessPage = new Milking_RecordFarmMilkingSuccessPage();
+		helperFunctions = new HelperFunctions();
 
 	}
 

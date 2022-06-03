@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 public class TestUtils {
 
-	public static final long WAIT = 15;
+	public static final long WAIT = 60;
 	
 	public static final long OTP_WAIT = 15;
 
