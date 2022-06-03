@@ -15,7 +15,8 @@ public class ForgotPin extends GenericBase{
 	public void ForgotPin_PinLessThanSixDigitsNotAccepted(Map<String,String> data) throws Exception{
 		
 		/** Enter Phone Number **/
-		enterPhoneNoPage.enter_PhoneNo("6666666669");
+		String phone = prop.getProperty("FarmerPhone");
+		enterPhoneNoPage.enter_PhoneNo(phone);
 		enterPhoneNoPage.click_continue();
 		
 		/**Forgot PIN */
@@ -37,7 +38,8 @@ public class ForgotPin extends GenericBase{
 	public void ForgotPin_PinAndConfirmPinMustMatch(Map<String,String> data) throws Exception{
 		
 		/** Enter Phone Number **/
-		enterPhoneNoPage.enter_PhoneNo("6666666669");
+		String phone = prop.getProperty("FarmerPhone");
+		enterPhoneNoPage.enter_PhoneNo(phone);
 		enterPhoneNoPage.click_continue();
 		
 		/**Forgot PIN */
@@ -61,7 +63,8 @@ public class ForgotPin extends GenericBase{
 	public void ForgotPin_CannotSetOldPin(Map<String,String> data) throws Exception{
 		
 		/** Enter Phone Number **/
-		enterPhoneNoPage.enter_PhoneNo("6666666669");
+		String phone = prop.getProperty("FarmerPhone");
+		enterPhoneNoPage.enter_PhoneNo(phone);
 		enterPhoneNoPage.click_continue();
 		
 		/**Forgot PIN */
@@ -89,7 +92,7 @@ public class ForgotPin extends GenericBase{
 		/** Login again **/
 		
 		/** Enter Phone Number **/
-		enterPhoneNoPage.enter_PhoneNo("6666666669");
+		enterPhoneNoPage.enter_PhoneNo(phone);
 		enterPhoneNoPage.click_continue();
 		
 		/**Forgot PIN */
@@ -117,7 +120,8 @@ public class ForgotPin extends GenericBase{
 //		chooseLanguagePage.click_skipBtn(); // Skip Tutorial
 		
 		/** Enter Phone Number **/
-		enterPhoneNoPage.enter_PhoneNo("6666666669");
+		String phone = prop.getProperty("FarmerPhone");
+		enterPhoneNoPage.enter_PhoneNo(phone);
 		enterPhoneNoPage.click_continue();
 		
 		/**Forgot PIN */
