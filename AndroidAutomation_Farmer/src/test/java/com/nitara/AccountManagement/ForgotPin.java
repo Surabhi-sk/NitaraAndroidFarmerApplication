@@ -15,7 +15,7 @@ public class ForgotPin extends GenericBase{
 	public void ForgotPin_PinLessThanSixDigitsNotAccepted(Map<String,String> data) throws Exception{
 		
 		/** Enter Phone Number **/
-		String phone = prop.getProperty("FarmerPhone");
+		String phone = prop.getProperty("Username");
 		enterPhoneNoPage.enter_PhoneNo(phone);
 		enterPhoneNoPage.click_continue();
 		
@@ -38,7 +38,7 @@ public class ForgotPin extends GenericBase{
 	public void ForgotPin_PinAndConfirmPinMustMatch(Map<String,String> data) throws Exception{
 		
 		/** Enter Phone Number **/
-		String phone = prop.getProperty("FarmerPhone");
+		String phone = prop.getProperty("Username");
 		enterPhoneNoPage.enter_PhoneNo(phone);
 		enterPhoneNoPage.click_continue();
 		
@@ -63,7 +63,7 @@ public class ForgotPin extends GenericBase{
 	public void ForgotPin_CannotSetOldPin(Map<String,String> data) throws Exception{
 		
 		/** Enter Phone Number **/
-		String phone = prop.getProperty("FarmerPhone");
+		String phone = prop.getProperty("Username");
 		enterPhoneNoPage.enter_PhoneNo(phone);
 		enterPhoneNoPage.click_continue();
 		
@@ -120,7 +120,7 @@ public class ForgotPin extends GenericBase{
 //		chooseLanguagePage.click_skipBtn(); // Skip Tutorial
 		
 		/** Enter Phone Number **/
-		String phone = prop.getProperty("FarmerPhone");
+		String phone = prop.getProperty("Username");
 		enterPhoneNoPage.enter_PhoneNo(phone);
 		enterPhoneNoPage.click_continue();
 		
