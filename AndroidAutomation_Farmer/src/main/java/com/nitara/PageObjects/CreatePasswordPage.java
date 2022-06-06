@@ -14,6 +14,9 @@ public class CreatePasswordPage extends BasePage {
 	@AndroidFindBy(id = "savePin") 
 	private MobileElement savePin;
 	
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
+	
 	public void enter_createPin(int pin) {
 		sendKeys(createPin, pin);
 	}
@@ -25,6 +28,11 @@ public class CreatePasswordPage extends BasePage {
 	public void click_savePin() {
 		click(savePin);
 	}
+	
+	public void assertWarningMsg(String msg) {
+		waitVisibility(warning_msg);
+		Assert.assertEquals(warning_msg.getText(),msg);
+	} 
 
 
 
