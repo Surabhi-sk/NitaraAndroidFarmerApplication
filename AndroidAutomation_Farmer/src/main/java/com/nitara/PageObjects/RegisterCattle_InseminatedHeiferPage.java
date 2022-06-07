@@ -66,7 +66,7 @@ public class RegisterCattle_InseminatedHeiferPage extends BasePage{
 	
 	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
 			+ "new UiSelector().resourceIdMatches(\".*inseminationDate.*\"))")  
-	private MobileElement inserminationDate;
+	private MobileElement inseminationDate;
 	
 	@AndroidFindBy(id = "semen_brand_spinner") 
 	private MobileElement semen_brand;
@@ -82,7 +82,7 @@ public class RegisterCattle_InseminatedHeiferPage extends BasePage{
 	
 	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
 			+ "new UiSelector().resourceIdMatches(\".*is_inseminated.*\"))") 
-	private MobileElement is_Incerminated;
+	private MobileElement is_Inseminated;
 	
 	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
 			+ "new UiSelector().resourceIdMatches(\".*insemination_date_lbl.*\"))") 
@@ -154,9 +154,9 @@ public class RegisterCattle_InseminatedHeiferPage extends BasePage{
 	}
 	
 	public void isCattleInseminated() {
-		String checked = is_Incerminated.getAttribute("checked");
+		String checked = is_Inseminated.getAttribute("checked");
 		if(checked.equals("false")) {
-			is_Incerminated.click();	
+			is_Inseminated.click();	
 		}
 	}
 	
@@ -184,7 +184,7 @@ public class RegisterCattle_InseminatedHeiferPage extends BasePage{
 	}
 	
 	public void enter_InseminationDate(String Date) {
-		sendKeys(inserminationDate,Date);
+		sendKeys(inseminationDate,Date);
 	}
 	
 	public void select_semenBrand(String semen) {
