@@ -21,6 +21,9 @@ public class RegisterCattle_InseminatedHeiferPage extends BasePage{
 	
 	@AndroidFindBy(id = "cooperative_tag_number_et") 
 	private MobileElement CoopTagNumber;
+
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
 	
 	
 	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
@@ -66,7 +69,7 @@ public class RegisterCattle_InseminatedHeiferPage extends BasePage{
 	
 	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
 			+ "new UiSelector().resourceIdMatches(\".*inseminationDate.*\"))")  
-	private MobileElement inserminationDate;
+	private MobileElement inseminationDate;
 	
 	@AndroidFindBy(id = "semen_brand_spinner") 
 	private MobileElement semen_brand;
@@ -82,7 +85,7 @@ public class RegisterCattle_InseminatedHeiferPage extends BasePage{
 	
 	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
 			+ "new UiSelector().resourceIdMatches(\".*is_inseminated.*\"))") 
-	private MobileElement is_Incerminated;
+	private MobileElement is_Inseminated;
 	
 	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
 			+ "new UiSelector().resourceIdMatches(\".*insemination_date_lbl.*\"))") 
@@ -154,15 +157,17 @@ public class RegisterCattle_InseminatedHeiferPage extends BasePage{
 	}
 	
 	public void isCattleInseminated() {
-		String checked = is_Incerminated.getAttribute("checked");
+		String checked = is_Inseminated.getAttribute("checked");
 		if(checked.equals("false")) {
-			is_Incerminated.click();	
+			is_Inseminated.click();	
 		}
 	}
 	
 	public void artificialInsemination(String date,String semen,String BullId) throws InterruptedException {
 		enter_InseminationDate(date);
-		select_semenBrand(semen);
+		click(insemination_type);
+		select_dropdown("Artificial");
+		//select_semenBrand(semen);
 		enter_BullId(BullId);
 		hideKeyboard();
 	}
@@ -184,7 +189,7 @@ public class RegisterCattle_InseminatedHeiferPage extends BasePage{
 	}
 	
 	public void enter_InseminationDate(String Date) {
-		sendKeys(inserminationDate,Date);
+		sendKeys(inseminationDate,Date);
 	}
 	
 	public void select_semenBrand(String semen) {
@@ -199,6 +204,10 @@ public class RegisterCattle_InseminatedHeiferPage extends BasePage{
 	
 	public void press_SaveButton() {
 		click(save_btn);	
+	}
+	public void assertWarning(String message) {
+		waitVisibility(warning_msg);
+		Assert.assertEquals(warning_msg.getText(),message);		
 	}
 
 }
