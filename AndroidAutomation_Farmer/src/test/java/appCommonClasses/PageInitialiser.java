@@ -37,6 +37,8 @@ import com.nitara.PageObjects.Health_TreatmentSymptomsPage;
 import com.nitara.PageObjects.Health_ViewDewormingPage;
 import com.nitara.PageObjects.Health_ViewTreatmentPage;
 import com.nitara.PageObjects.Health_ViewVaccinationPage;
+import com.nitara.PageObjects.Housing_CreateShed;
+import com.nitara.PageObjects.Housing_ShedViewPage;
 import com.nitara.PageObjects.Milking_RecordCattleMilkingPage;
 import com.nitara.PageObjects.Milking_RecordCattleMilkingSuccessPage;
 import com.nitara.PageObjects.Milking_RecordFarmMilkingPage;
@@ -109,6 +111,8 @@ public class PageInitialiser{
 	protected static Disease_PredictorPage diseasepredictorpage;
 	protected static RegisterCattle_CattleTypePage cattleTypePage;
 	protected static ChooseLanguagePage chooseLanguagePage;
+	protected static Housing_ShedViewPage shedViewPage;
+	protected static Housing_CreateShed   createshed;
 	protected static ChangeHousing  changehousing;
 	protected static MoveCattle_Successpage movecattlesuccesspage;
 	protected static Milking_RecordCattleMilkingPage cattleMilkingPage;
@@ -164,6 +168,8 @@ public class PageInitialiser{
 		enterPinPage= new EnterPinPage();
 		cattleTypePage = new RegisterCattle_CattleTypePage();
 		chooseLanguagePage = new ChooseLanguagePage();
+		shedViewPage = new Housing_ShedViewPage();
+		createshed = new Housing_CreateShed();
 		changehousing = new ChangeHousing();		
 		movecattlesuccesspage = new MoveCattle_Successpage(); 
 		settingsPage = new SettingsPage();
