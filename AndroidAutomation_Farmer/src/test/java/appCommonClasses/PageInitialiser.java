@@ -1,6 +1,7 @@
 package appCommonClasses;
 
 
+import com.nitara.APIFunctions.RegisterMilkingCattle;
 import com.nitara.Helper.GenerateRandomData;
 
 import com.nitara.PageObjects.BCS_AddBCSPage;
@@ -119,6 +120,7 @@ public class PageInitialiser{
 	protected static Milking_RecordCattleMilkingSuccessPage cattleMilkingSuccessPage;
 	protected static Milking_RecordFarmMilkingPage farmMilkingPage;
 	protected static Milking_RecordFarmMilkingSuccessPage farmMilkingSuccessPage;
+	protected static RegisterMilkingCattle registerCattleApi;
 	
 	public static void initializeAllPages() {
 
@@ -180,6 +182,7 @@ public class PageInitialiser{
 		farmMilkingPage = new Milking_RecordFarmMilkingPage();
 		farmMilkingSuccessPage = new Milking_RecordFarmMilkingSuccessPage();
 		helperFunctions = new HelperFunctions();
+		registerCattleApi = new RegisterMilkingCattle();
 
 	}
 
