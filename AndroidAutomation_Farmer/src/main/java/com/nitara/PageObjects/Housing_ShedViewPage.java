@@ -2,6 +2,7 @@ package com.nitara.PageObjects;
 
 
 
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import io.appium.java_client.MobileElement;
@@ -55,6 +56,22 @@ public class Housing_ShedViewPage extends BasePage
 	
 	@AndroidFindBy(id = "backButtonText") 
 	private MobileElement gobacktoshedview;
+	
+	@AndroidFindBy(id = "search_cattle_in_group") 
+	private MobileElement search_cattle;
+	
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
+	
+	@AndroidFindBy(id = "allCattleAssignedTxt")
+	private MobileElement display_msg;
+	
+	@AndroidFindBy(id = "chkSelectAll")
+	private MobileElement chkSelectAll;
+	
+	public void searchCattle(String tag) {
+		sendKeys(search_cattle,tag);
+	}
 	
 	public void Searchshed(String shedname)
 	{
@@ -148,7 +165,7 @@ public class Housing_ShedViewPage extends BasePage
 		
 		waitVisibility(Savebtn);
 			click(Savebtn);
-			tap();
+			//tap();
 			waitVisibility(Savebtn);
 			click(Savebtn);
 
@@ -167,7 +184,7 @@ public class Housing_ShedViewPage extends BasePage
 	
 		click(addtogroupbtn);
 		
-		tap();
+		//tap();
 		
 		if(addtogroupbtn.isDisplayed())
 		{
@@ -182,6 +199,26 @@ public class Housing_ShedViewPage extends BasePage
 	//	click(page);			
 			
 		
+	}
+	
+	public void assertWarningMsg(String msg) {
+		waitVisibility(warning_msg);
+		Assert.assertEquals(warning_msg.getText(),msg);
+	}
+	
+	public void AssertCattleAdditionToGroup(String tag) {
+		WebElement cattle_tag= driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true))" +
+				".scrollIntoView(new UiSelector().text(\""+tag+"\"))");
+		Assert.assertEquals(cattle_tag.getText(), tag);
+	}
+	
+	public void assertMsg(String msg) {
+		waitVisibility(display_msg);
+		Assert.assertEquals(display_msg.getText(),msg);
+	}
+	
+	public void clickSelectAll() {
+		click(chkSelectAll);
 	}
 		
 
