@@ -11,6 +11,7 @@
       <class name="com.nitara.CattleManagement.RegisterMilkingorDryCattle"/>
       <class name="com.nitara.AccountManagement.ForgotPin"/>
       <class name="com.nitara.HousingManagement.CreateUserdefinedShed"></class>
+      <class name="com.nitara.HousingManagement.AddCattletouserdefinedshed"></class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Regression Suite -->
