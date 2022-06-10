@@ -20,6 +20,10 @@ public class AddCattletouserdefinedshed extends GenericBase
 		String url = prop.getProperty("APIbaseUrl");
 		String Tag =  registerCattleApi.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
 		
+		/** Refresh Farmer home page **/
+		farmerHomePage.waitForPageLoad();
+		farmerHomePage.click_HomeButton();
+		
 		/**  Go to Housing  and creatuserdefinedshed */
 		String  shedname = helperFunctions.CreateUserdefinedshed();	
 		
@@ -55,6 +59,10 @@ public class AddCattletouserdefinedshed extends GenericBase
 		/** Register cattle */
 		String url = prop.getProperty("APIbaseUrl");
 		String Tag =  registerCattleApi.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
+		
+		/** Refresh Farmer home page **/
+		farmerHomePage.waitForPageLoad();
+		farmerHomePage.click_HomeButton();
 		
 		/**  Go to Housing  and creatuserdefinedshed */
 		String  shedname = helperFunctions.CreateUserdefinedshed();	
@@ -93,6 +101,10 @@ public class AddCattletouserdefinedshed extends GenericBase
 		/** Register cattle */
 		String url = prop.getProperty("APIbaseUrl");
 		String Tag =  registerCattleApi.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
+		
+		/** Refresh Farmer home page **/
+		farmerHomePage.waitForPageLoad();
+		farmerHomePage.click_HomeButton();
 		
 		/**  Go to Housing  and creatuserdefinedshed */
 		String  shedname = helperFunctions.CreateUserdefinedshed();	
@@ -142,6 +154,10 @@ public class AddCattletouserdefinedshed extends GenericBase
 		/** Register cattle */
 		String url = prop.getProperty("APIbaseUrl");
 		String Tag =  registerCattleApi.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
+		
+		/** Refresh Farmer home page **/
+		farmerHomePage.waitForPageLoad();
+		farmerHomePage.click_HomeButton();
 		
 	
 		/**  Go to Housing  and creatuserdefinedshed */

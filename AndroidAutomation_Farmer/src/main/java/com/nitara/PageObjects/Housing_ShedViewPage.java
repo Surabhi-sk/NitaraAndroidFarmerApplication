@@ -2,8 +2,15 @@ package com.nitara.PageObjects;
 
 
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import com.nitara.Helper.GenerateRandomData;
+import com.nitara.utils.TestUtils;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -68,6 +75,172 @@ public class Housing_ShedViewPage extends BasePage
 	
 	@AndroidFindBy(id = "chkSelectAll")
 	private MobileElement chkSelectAll;
+	
+	@AndroidFindBy(id = "more_option")
+	private MobileElement more_option;
+	
+	@AndroidFindBy(id = "menu2")
+	private MobileElement deletegrpbtn;
+	
+	@AndroidFindBy(id = "textView1")
+	private MobileElement deletegrp_warningmsg;
+	
+	@AndroidFindBy(id = "yesBtn")
+	private MobileElement yesBtn;
+	
+	@AndroidFindBy(id = "group_name_txt")
+	private MobileElement group_name_txt;
+	
+	@AndroidFindBy(id = "addIcon")
+	private MobileElement addGrp;
+	
+	@AndroidFindBy(id = "my_group_name_et")
+	private MobileElement my_group_name_et;
+	
+	@AndroidFindBy(id = "add_groups_btn")
+	private MobileElement add_groups_btn;
+	
+	@AndroidFindBy(id = "txtMoveOut")
+	private MobileElement deletegrpwithCattle_warningmsg;
+	
+	@AndroidFindBy(id = "move_cattle_btn")
+	private MobileElement move_cattle_btn;
+	
+	@AndroidFindBy(id = "shed_no")
+	private MobileElement shed_no;
+	
+	@AndroidFindBy(id = "cattle_no")
+	private MobileElement cattle_no;
+	
+	@AndroidFindBy(id = "groups_no")
+	private MobileElement groups_no;
+	
+	@AndroidFindBy(id = "txtValues")
+	private MobileElement cattlecountInGrp;
+	
+	public void deleteAllExceptLastShed() throws InterruptedException {
+		//this function deletes all sheds except last one
+		
+		/** logic: check if there is more than one shed
+		 *  if no then its the last shed so do nothing here
+		 *  if yes then we have to delete it
+		 *  so check if the shed has cattle
+		 *  if no then delete shed directly
+		 *  if yes then move the cattle out
+		**/
+		
+		while(! shed_no.getText().equals("1/1 ")) {
+			
+			String number_of_cattle;
+			
+			while(! cattle_no.getText().equals("0")) {
+				number_of_cattle=cattlecountInGrp.getText();
+				ClickGroup();
+				clickonMoreOptions();
+				clickonDeleteGrpBtn();
+				
+				if(! number_of_cattle.equals("0")) {
+					click(move_cattle_btn);
+					click(Savebtn);
+					click(gotoshedbtn);
+				}
+				else {
+					click(yesBtn);
+				}
+			}
+			clickonMoreOptions();
+			clickonDeleteGrpBtn(); //delete shed btn has same id as delete grp btn
+			clickonyesBtn();
+		}
+	}
+	
+	public void deleteLastShed(String warning, String success) throws InterruptedException {
+		
+		//this function deletes last shed	
+		
+		String number_of_grps,number_of_cattle;
+		String shed=nameofshed.getText();	
+		String grp;
+		while(! cattle_no.getText().equals("0")) {
+			number_of_grps=groups_no.getText();
+			number_of_cattle=cattlecountInGrp.getText();
+			ClickGroup();
+			grp = group_name_txt.getText();
+			clickonMoreOptions();
+			clickonDeleteGrpBtn();
+			if(! number_of_cattle.equals("0")) {
+				click(move_cattle_btn);
+				if(! number_of_grps.equals("1")) {
+					click(Savebtn);
+					click(gotoshedbtn);
+				}
+				else {
+					Assert.assertEquals(warning_msg.getText(),success.replace("grp_No", grp));
+					Thread.sleep(10000);
+					click(gobacktoshedview);
+				}
+				
+			}
+			else {
+				click(yesBtn);
+			}
+		}
+		ClickGroup();
+		grp = group_name_txt.getText();
+		clickonMoreOptions();
+		clickonDeleteGrpBtn(); 
+		assert_deleteGrpWarningMsg(warning,shed,grp);
+		clickonyesBtn();
+	}
+	
+	
+	public void clickonMoreOptions() {
+		click(more_option);
+	}
+	
+	public void clickonDeleteGrpBtn() {
+		click(deletegrpbtn);
+	}
+	
+	public void assert_deleteGrpWarningMsg(String msg, String Shedname, String Groupname) {
+		msg = msg.replace("shed_No", Shedname);
+		msg = msg.replace("grp_No", Groupname);
+		Assert.assertEquals(deletegrp_warningmsg.getText(),msg);
+	}
+	
+	public void assert_deleteGrpSuccessMsg(String msg, String Shedname, String Groupname) {
+		msg = msg.replace("shed_No", Shedname);
+		msg = msg.replace("grp_No", Groupname);
+		Assert.assertEquals(warning_msg.getText(),msg);
+	}
+	
+	public void assert_deleteGrpWithCattleWarningMsg(String msg) {
+		Assert.assertEquals(deletegrpwithCattle_warningmsg.getText(),msg);
+		Assert.assertTrue(move_cattle_btn.isDisplayed());
+		
+	}
+	
+	public void clickonyesBtn() {
+		click(yesBtn);
+	}
+	
+	public void clickonAddGrpBtn() {
+		click(addGrp);
+	}
+	
+	public void EnterGrpName() {
+		GenerateRandomData helper = new GenerateRandomData();
+		String grpname = helper.generateRandomNumber(7);
+		sendKeys(my_group_name_et,grpname);
+	}
+	
+	public void clickonCreateGrp() {
+		click(add_groups_btn);
+	}
+	
+	public String getGroupName() {
+		return group_name_txt.getText();
+	}
 	
 	public void searchCattle(String tag) {
 		sendKeys(search_cattle,tag);
