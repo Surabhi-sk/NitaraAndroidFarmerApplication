@@ -43,5 +43,36 @@ public class DeleteHeat extends GenericBase{
 		breedingTimelinePage.assertDeleteMsg("Heat",data.get("heatDate"));
 
 	}
+	
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void Heat_DeleteDataNoButton(Map<String,String> data) throws Throwable {
+
+		/** Register cattle */
+		String url = prop.getProperty("APIbaseUrl");
+		RegisterMilkingCattle reg = new RegisterMilkingCattle();
+		String Tag = reg.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
+
+		/** Go to cattle Profile page -> Select Breeding */
+		farmerHomePage.waitForPageLoad();
+		farmerHomePage.waitForPageLoad();
+		new Helper_AppNavigation().goTo_addBreedingActivityScreenfromCattleProfile(Tag,"heat");
+		
+		/** Fill the heat form */ 
+		addHeatPage.select_HeatType(data.get("heatType"));
+		addHeatPage.enter_HeatDate(data.get("heatDate"));
+		addHeatPage.press_SaveButton();
+
+		/** Assert cattletag in breeding successfully recorded page */
+		breedingSuccessPage.cattletag_Assert(Tag);
+		breedingSuccessPage.click_BackToBreedingTimeline();
+
+		/** Delete the added heat */
+		breedingTimelinePage.press_DeleteBtnLeft();
+		breedingTimelinePage.press_NoBtn();
+
+		/** Assert Delete message */
+		breedingTimelinePage.assertMsg(data.get("heatDate"));
+
+	}
 
 }
