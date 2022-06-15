@@ -7,9 +7,14 @@ import appCommonClasses.GenericBase;
 
 public class RegisterMilkingorDryCattle extends GenericBase{
 	
-	@Test(groups="Regression",dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	@Test(groups="Regression1",dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
 	public void RegisterMilkingorDryCattle_TagnumberAcceptsSpecialChars(Map<String,String> data) throws Exception{		
-
+		
+		/** Push image from PC to android device**/
+		String pc_location = prop.getProperty("file_path");
+		String mobile_location = prop.getProperty("remote_path");
+		farmerHomePage.pushPhotoToAndroidDevice(mobile_location,pc_location);
+		
 		/** Farmer Home page - Select Register Cattle */
 		farmerHomePage.waitForPageLoad();
 		farmerHomePage.click_RegisterCattleButton();
@@ -20,6 +25,11 @@ public class RegisterMilkingorDryCattle extends GenericBase{
 		
 		/** Milking and Dry Cattle page - Enter Tag number with special chars and save */
 		farmerHomePage.waitForSmallPageLoad();
+		
+		/** Upload Photo **/
+		//registerMilkingCattlePage.uploadPhotosfromCamera();
+		registerMilkingCattlePage.uploadPhotosfromGallery();
+		
 		registerMilkingCattlePage.enter_TagNumber(data.get("tagNumber"));		
 		registerMilkingCattlePage.press_SaveButton();	
 		registerMilkingCattlePage.assertWarningMsg(data.get("warningMessage"));
@@ -286,7 +296,7 @@ public class RegisterMilkingorDryCattle extends GenericBase{
 	}
 
 	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
-	public void RegisterCattle_MilkingorDryCattle(Map<String,String> data) throws InterruptedException {
+	public void RegisterCattle_MilkingorDryCattle(Map<String,String> data) throws Exception {
 
 		String tagNumber =generateRandomData.generateRandomNumber(7);
 		String cooptagNumber =generateRandomData.generateRandomNumber(12);
@@ -300,6 +310,7 @@ public class RegisterMilkingorDryCattle extends GenericBase{
 		registerMilkingCattlePage.waitForPageLoad();
 		registerMilkingCattlePage.select_cattleType("MILKING AND DRY CATTLE");
 		registerMilkingCattlePage.assert_CattleType();
+		
 		registerMilkingCattlePage.enter_TagNumber(tagNumber);
 		registerMilkingCattlePage.enter_CoopTagNumber(cooptagNumber);
 //		registerMilkingCattlePage.select_cattleType(data.get("cattleType"));
@@ -352,6 +363,7 @@ public class RegisterMilkingorDryCattle extends GenericBase{
 		registerCattleSuccessPage.captureScreenshots("RegisterMilch");
 		registerCattleSuccessPage.assertCattleTag(tagNumber);
 		registerCattleSuccessPage.assertSuccessMsg("Registration has been saved successfully for");
+		
 	
 	}
 
