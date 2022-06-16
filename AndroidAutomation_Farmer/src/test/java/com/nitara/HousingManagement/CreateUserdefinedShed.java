@@ -1,9 +1,10 @@
 package com.nitara.HousingManagement;
 
+import java.util.Map;
+
 import org.testng.annotations.Test;
 
-
-
+import com.nitara.utils.DataProviderUtils;
 
 import appCommonClasses.GenericBase;
 import appCommonClasses.Helper_AppNavigation;
@@ -12,10 +13,11 @@ import appCommonClasses.HelperFunctions;
 
 public class CreateUserdefinedShed extends GenericBase 
 {
-	@Test
-	public void Create_Userdefinedshed() throws Throwable
+	
+	@Test(groups="Regression",dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void CreateUserdefinedshed_withDuplicateGroupName(Map<String,String> data) throws Throwable
 	{
-		new Helper_AppNavigation().goTo_SelectionofShedTypePage();
+		helper_AppNavigation.goTo_SelectionofShedTypePage();
 		
 		String name= createshed.Generateshedname();
 			
@@ -30,7 +32,152 @@ public class CreateUserdefinedShed extends GenericBase
 		/** Click Userdefinedshedbtn */		
 		createshed.clickuserdefinedbtn();	
 		
-		/** Enter userdefinedshedname */
+		/** Enter group name */
+		String grp_name= createshed.entergroupname();	
+		
+		/** Click on Add more groups button */
+		createshed.click_addmoregrpsbtn();
+		
+		/** Enter group name */
+		createshed.enterNextgroupname(grp_name);
+		
+		/** Click on Creategroups to create userdefined shed*/
+		createshed.Clickcreatemygroups();
+		
+		/** Assert the warning message */
+		createshed.assertWarningMsg(grp_name+data.get("warningMessage"));		
+		
+}
+	@Test(groups="Regression",dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void CreateUserdefinedshed_withEmptyGroupName(Map<String,String> data) throws Throwable
+	{
+		helper_AppNavigation.goTo_SelectionofShedTypePage();
+		
+		String name= createshed.Generateshedname();
+			
+		/** Creation of User Defined shed */
+		
+		/** Enter shedname */
+		createshed.entershedname(name);
+		
+		/** Click next btn*/
+		createshed.clicknextbtn();	
+		
+		/** Click Userdefinedshedbtn */		
+		createshed.clickuserdefinedbtn();	
+		
+		/** Enter group name */
+		createshed.enterNextgroupname("");
+		
+		/** Click on Creategroups to create userdefined shed*/
+		createshed.Clickcreatemygroups();
+		
+		/** Assert the warning message */
+		createshed.assertWarningMsg(data.get("warningMessage"));		
+		
+}
+	@Test
+	public void CreateUserdefinedshed_withMultipleGroups() throws Throwable
+	{
+		helper_AppNavigation.goTo_SelectionofShedTypePage();
+		
+		String name= createshed.Generateshedname();
+			
+		/** Creation of User Defined shed */
+		
+		/** Enter shedname */
+		createshed.entershedname(name);
+		
+		/** Click next btn*/
+		createshed.clicknextbtn();	
+		
+		/** Click Userdefinedshedbtn */		
+		createshed.clickuserdefinedbtn();	
+		
+		/** Enter group name */
+		createshed.enteruserdefinedname();
+		
+		/** Click on Add more groups button */
+		createshed.click_addmoregrpsbtn();
+		
+		/** Enter group name */
+		String grp_name = generateRandomData.generateRandomNumber(7);
+		createshed.enterNextgroupname(grp_name);
+		
+		/** Click on Creategroups to create userdefined shed*/
+		createshed.Clickcreatemygroups();
+		
+		/** search for the created shed*/ 
+		shedViewPage.Searchshed(name);
+		
+		/** Assert the created shed */
+		shedViewPage.Assertshed(name);		
+		
+}
+	@Test(groups="Regression",dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void CreateUserdefinedshed_withDuplicateShedName(Map<String,String> data) throws Throwable
+	{
+		helper_AppNavigation.goTo_SelectionofShedTypePage();
+		
+		String name= createshed.Generateshedname();
+			
+		/** Creation of 1st User Defined shed */
+		
+		/** Enter shedname */
+		createshed.entershedname(name);
+		
+		/** Click next btn*/
+		createshed.clicknextbtn();	
+		
+		/** Click Userdefinedshedbtn */		
+		createshed.clickuserdefinedbtn();	
+		
+		/** Enter group name */
+		createshed.enteruserdefinedname();	
+		
+		/** Click on Creategroups to create userdefined shed*/
+		createshed.Clickcreatemygroups();
+		
+		/** search for the created shed*/ 
+		shedViewPage.Searchshed(name);
+		
+		
+		/** Assert the created shed */
+		shedViewPage.Assertshed(name);		
+		
+		/** Creation of 2nd User Defined shed */
+		createshed.ClickAddShedbtn();
+		
+		/** Enter shedname */
+		createshed.entershedname(name);
+		
+		/** Click next btn*/
+		createshed.clicknextbtn();	
+		
+		/** Assert the warning message */
+		createshed.assertWarningMsg(data.get("warningMessage"));		
+}
+	
+	
+	@Test
+	public void Create_Userdefinedshed() throws Throwable
+	{
+		helper_AppNavigation.goTo_SelectionofShedTypePage();
+		
+		String name= createshed.Generateshedname();
+			
+		/** Creation of User Defined shed */
+		
+		/** Enter shedname */
+		createshed.entershedname(name);
+		
+		/** Click next btn*/
+		createshed.clicknextbtn();	
+		
+		/** Click Userdefinedshedbtn */		
+		createshed.clickuserdefinedbtn();	
+		
+		/** Enter group name */
 		createshed.enteruserdefinedname();	
 		
 		/** Click on Creategroups to create userdefined shed*/
@@ -44,11 +191,7 @@ public class CreateUserdefinedShed extends GenericBase
 		
 		
 		/** Assert the created shed */
-		shedViewPage.Assertshed(name);
-		
-		
-		
-		
+		shedViewPage.Assertshed(name);		
 		
 }
 }
