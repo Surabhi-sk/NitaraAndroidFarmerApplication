@@ -54,8 +54,8 @@ public class RegisterBull extends GenericBase{
 		registerCattleBullPage.press_SaveButton();
 
 		/** Assert Warning Message */
-		WarningPage.captureScreenshots("RegisterBull");
-		WarningPage.assertWarningMsg("Name/Number should be only Alphabets or Numbers.");
+		WarningPage.captureScreenshots("RegisterBull Tag with special characters");
+		WarningPage.assertWarningMsg(data.get("warningMessage"));
 	}
 
 	@Test(groups = {"Regression"}, dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
@@ -75,8 +75,8 @@ public class RegisterBull extends GenericBase{
 		registerCattleBullPage.press_SaveButton();
 
 		/** Assert Warning Message */
-		WarningPage.captureScreenshots("RegisterBull");
-		WarningPage.assertWarningMsg("Cattle with entered Name/Number exists. Please enter valid Name/Number.");
+		WarningPage.captureScreenshots("RegisterBull with same eartag");
+		WarningPage.assertWarningMsg(data.get("warningMessage"));
 	}
 
 	@Test(groups = {"Regression"}, dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
@@ -99,8 +99,8 @@ public class RegisterBull extends GenericBase{
 		registerCattleBullPage.press_SaveButton();
 
 		/** Assert Warning Message */
-		WarningPage.captureScreenshots("RegisterBull");
-		WarningPage.assertWarningMsg("Pashu Aadhar should only be Numeric.Please check and re-enter Pashu Aadhar.");
+		WarningPage.captureScreenshots("RegisterBull with non numeric cooptagNumber");
+		WarningPage.assertWarningMsg(data.get("warningMessage"));
 	}
 
 	@Test(groups = {"Regression"}, dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
@@ -123,8 +123,8 @@ public class RegisterBull extends GenericBase{
 		registerCattleBullPage.press_SaveButton();
 
 		/** Assert Warning Message */
-		WarningPage.captureScreenshots("RegisterBull");
-		WarningPage.assertWarningMsg("Pashu Aadhar is not valid. Please check and re-enter valid 12-digit Pashu Aadhar Number.");
+		WarningPage.captureScreenshots("RegisterBull with Pashu aadhar less than 12 digits");
+		WarningPage.assertWarningMsg(data.get("warningMessage"));
 	}
 
 	@Test(groups = {"Regression"}, dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
@@ -146,8 +146,8 @@ public class RegisterBull extends GenericBase{
 		registerCattleBullPage.press_SaveButton();
 
 		/** Assert Warning Message */
-		WarningPage.captureScreenshots("RegisterBull");
-		WarningPage.assertWarningMsg("Pashu Aadhar is not valid. Please check and re-enter valid 12-digit Pashu Aadhar Number.");
+		WarningPage.captureScreenshots("RegisterBull with pashu aadhar more than 12 digits");
+		WarningPage.assertWarningMsg(data.get("warningMessage"));
 	}
 
 	@Test(groups = {"Regression"}, dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
@@ -164,8 +164,8 @@ public class RegisterBull extends GenericBase{
 		registerCattleBullPage.press_SaveButton();
 
 		/** Assert Warning Message */
-		WarningPage.captureScreenshots("RegisterBull");
-		WarningPage.assertWarningMsg("Cattle Name/Number must be between 1-10 characters.");
+		WarningPage.captureScreenshots("RegisterBull Cattle Tag Mandatory");
+    	WarningPage.assertWarningMsg(data.get("warningMessage"));
 	}
 
 	@Test(groups = {"Regression"}, dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
@@ -186,8 +186,8 @@ public class RegisterBull extends GenericBase{
 		registerCattleBullPage.press_SaveButton();
 
 		/** Assert Warning Message */
-		WarningPage.captureScreenshots("RegisterBull");
-		WarningPage.assertWarningMsg("The field Year of Birth cannot be empty");
+		WarningPage.captureScreenshots("RegisterBull without year of birth");
+		WarningPage.assertWarningMsg(data.get("warningMessage"));
 	}
 
 	@Test(groups = {"Regression"}, dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
@@ -215,8 +215,8 @@ public class RegisterBull extends GenericBase{
 		registerCattleBullPage.press_SaveButton();
 
 		/** Assert Warning Message */
-		WarningPage.captureScreenshots("RegisterBull");
-		WarningPage.assertWarningMsg("Weight cannot be less than 15 kg. Please check weight and re-enter weight again.");
+		WarningPage.captureScreenshots("RegisterBull weight less than 15kg");
+		WarningPage.assertWarningMsg(data.get("warningMessage"));
 	}
 
 	@Test(groups = {"Regression"}, dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
@@ -244,8 +244,8 @@ public class RegisterBull extends GenericBase{
 		registerCattleBullPage.press_SaveButton();
 
 		/** Assert Warning Message */
-		WarningPage.captureScreenshots("RegisterBull");
-		WarningPage.assertWarningMsg("Weight cannot be more than 2000 kg. Please check weight and re-enter weight again.");
+		WarningPage.captureScreenshots("RegisterBull with weight more than 2000kg");
+		WarningPage.assertWarningMsg(data.get("warningMessage"));
 	}
 
 	@Test(groups = {"Regression"}, dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
@@ -268,8 +268,8 @@ public class RegisterBull extends GenericBase{
 		registerCattleBullPage.press_SaveButton();
 
 		/** Assert Warning Message */
-		WarningPage.captureScreenshots("RegisterBull");
-		WarningPage.assertWarningMsg("Animal cannot be under 6 months old to be a Bull. Please register animal as Calf.");
+		WarningPage.captureScreenshots("RegisterBull under 6 months");
+		WarningPage.assertWarningMsg(data.get("warningMessage"));
 	}
 
 }
