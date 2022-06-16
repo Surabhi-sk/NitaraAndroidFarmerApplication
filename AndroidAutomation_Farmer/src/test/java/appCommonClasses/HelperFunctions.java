@@ -58,32 +58,6 @@ public class HelperFunctions extends PageInitialiser{
 			
 			return name;
 	}
-	
-	public void OnlyCreateUserdefinedshed() throws Throwable
-	{	
-		//this function only creates the shed and doesn't assert the creation
-		
-			helper_AppNavigation.goTo_SelectionofShedTypePage();
-			
-			String name= createshed.Generateshedname();
-				
-			/** Creation of User Defined shed */
-			
-			/** Enter shedname */
-			createshed.entershedname(name);
-			
-			/** Click next btn*/
-			createshed.clicknextbtn();	
-			
-			/** Click Userdefinedshedbtn */		
-			createshed.clickuserdefinedbtn();	
-			
-			/** Enter group name */
-			createshed.enteruserdefinedname();	
-			
-			/** Click on Creategroups to create userdefined shed*/
-			createshed.Clickcreatemygroups();
-	}
 
 	public String RegisterCattle_MilkingCattle() {
 
