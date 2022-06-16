@@ -51,7 +51,7 @@ public class RegisterMilkingorDryCattle extends GenericBase{
 		
 	}
 	
-	@Test(groups="Regression1",dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	@Test(groups="Regression",dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
 	public void RegisterMilkingorDryCattle_CoopTagnumberAcceptsNonnumericChars(Map<String,String> data) throws Exception{
 
 		/** Farmer Home page - Select Register Cattle */
