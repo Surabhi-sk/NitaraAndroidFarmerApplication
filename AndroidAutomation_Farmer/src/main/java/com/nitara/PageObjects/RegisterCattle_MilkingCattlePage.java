@@ -1,5 +1,7 @@
 package com.nitara.PageObjects;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -121,6 +123,60 @@ public class RegisterCattle_MilkingCattlePage  extends BasePage{
 	        ".scrollIntoView(new UiSelector().resourceIdMatches(\".*text1.*\"))") 
 	private MobileElement popup;
 	
+	@AndroidFindBy(id = "uploadphoto_tv")
+	private MobileElement uploadphoto_tv;
+	
+	@AndroidFindBy(id = "upload_from_gallery")
+	private MobileElement upload_from_gallery;
+	
+	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
+	        ".scrollIntoView(new UiSelector().text(\""+"Pictures"+"\"))") 
+	private MobileElement pictures;
+	
+	@AndroidFindBy(xpath = "//android.view.ViewGroup[contains(@content-desc, 'Photo taken')]") 
+	private MobileElement img;
+	
+	@AndroidFindBy(id = "save_and_go_back_btn")
+	private MobileElement save_and_go_back_btn;
+	
+	@AndroidFindBy(id = "take_picture")
+	private MobileElement take_picture;
+	
+	@AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_button")
+	private MobileElement permission_allow_button;
+	
+	@AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Shutter button\"]")
+	private MobileElement shutter_button;
+	
+	@AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Done\"]")
+	private MobileElement intent_done_apply;
+	
+	public void uploadPhotosfromCamera() {
+		click(uploadphoto_tv);
+//		click(upload_from_gallery);
+//		click(pictures);
+//		click(img);
+		
+		click(take_picture);
+//		click(permission_allow_button);
+//		click(permission_allow_button);
+		waitForVisibility(shutter_button);
+		click(shutter_button);
+		waitForVisibility(intent_done_apply);
+		click(intent_done_apply);
+
+		
+		click(save_and_go_back_btn);	
+	}
+	
+	public void uploadPhotosfromGallery() {
+		
+		click(uploadphoto_tv);
+		click(upload_from_gallery);
+		click(pictures);
+		click(img);		
+		click(save_and_go_back_btn);	
+	}
 	
 	public void select_cattleType(String cattleType) {
 		List<MobileElement> cattleTypes = (List<MobileElement>) driver.findElementsById("cattle_container");

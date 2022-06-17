@@ -249,7 +249,12 @@ public class BasePage {
 		WebDriverWait wait = new WebDriverWait(driver, TestUtils.WAIT);
 		wait.until(ExpectedConditions.visibilityOf(e));
 	}
-
+	
+	public void pushPhotoToAndroidDevice(String remote,String file) throws IOException {
+		
+		driver.pushFile(remote, new File(file));
+		System.out.println("File Pushed");
+	}
 
 
 }
