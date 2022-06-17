@@ -2,6 +2,7 @@ package com.nitara.BreedingManagement;
 
 import java.util.Map;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.nitara.APIFunctions.RegisterMilkingCattle;
@@ -10,34 +11,34 @@ import appCommonClasses.GenericBase;
 import appCommonClasses.Helper_AppNavigation;
 import appCommonClasses.HelperFunctions;
 
-public class AddCalving extends GenericBase{
+public class AddCalving extends GenericBase {
 
-	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
-	public void Calving_AddData(Map<String,String> data) throws Throwable {
+	@Test(dataProvider = "getData", dataProviderClass = DataProviderUtils.class)
+	public void Calving_AddData(Map<String, String> data) throws Throwable {
 
 		/** Register cattle */
-		String url = prop.getProperty("APIbaseUrl");
-		RegisterMilkingCattle reg = new RegisterMilkingCattle();
-		String Tag = reg.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
-
+//		String url = prop.getProperty("APIbaseUrl");
+//		RegisterMilkingCattle reg = new RegisterMilkingCattle();
+//		String Tag = reg.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
+		String Tag = "63327235";
 		/** Add insemination for the cattle for the given date */
 		farmerHomePage.waitForPageLoad();
-		new HelperFunctions().Insemination_ForGivenDate(Tag,generateRandomData.getPastDate(151));
+		new HelperFunctions().Insemination_ForGivenDate(Tag, generateRandomData.getPastDate(151));
 
 		/** Add PD for the cattle for the given date */
 		farmerHomePage.waitForPageLoad();
-		new HelperFunctions().PD_ForGivenDate(Tag,generateRandomData.getPastDate(151-21));
+		new HelperFunctions().PD_ForGivenDate(Tag, generateRandomData.getPastDate(151 - 21));
 
 		/** Go to Calving screen */
 		farmerHomePage.waitForPageLoad();
-		new Helper_AppNavigation().goTo_addBreedingActivityScreenfromFarmerHomePage(Tag,"Calving");
+		new Helper_AppNavigation().goTo_addBreedingActivityScreenfromFarmerHomePage(Tag, "Calving");
 
 		/** Fill calving form */
-		if(data.get("calfResult").equalsIgnoreCase("Single")) {
-			addCalvingPage.select_CalfResultSingle(data.get("calfResult"),data.get("calfGender1"));
-		}
-		else {
-			addCalvingPage.select_CalfResultTwins(data.get("calfResult"),data.get("calfGender1"),data.get("calfGender2"));
+		if (data.get("calfResult").equalsIgnoreCase("Single")) {
+			addCalvingPage.select_CalfResultSingle(data.get("calfResult"), data.get("calfGender1"));
+		} else {
+			addCalvingPage.select_CalfResultTwins(data.get("calfResult"), data.get("calfGender1"),
+					data.get("calfGender2"));
 		}
 		addCalvingPage.enter_CalvingDate(generateRandomData.getPastDate(0));
 		addCalvingPage.press_SaveButton();
@@ -46,7 +47,76 @@ public class AddCalving extends GenericBase{
 		breedingSuccessPage.captureScreenshots("AddCalving");
 		breedingSuccessPage.cattletag_Assert(Tag);
 
-		
+	}
+
+	@Test(dataProvider = "getData", dataProviderClass = DataProviderUtils.class)
+	public void AddCalving_150DaysAfterInseminationDate(Map<String, String> data) throws Throwable {
+
+		/** Register cattle */
+		String url = prop.getProperty("APIbaseUrl");
+		RegisterMilkingCattle reg = new RegisterMilkingCattle();
+		String Tag = reg.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
+		/** Add insemination for the cattle for the given date */
+		farmerHomePage.waitForPageLoad();
+		new HelperFunctions().Insemination_ForGivenDate(Tag, generateRandomData.getPastDate(151));
+
+		/** Add PD for the cattle for the given date */
+		farmerHomePage.waitForPageLoad();
+		new HelperFunctions().PD_ForGivenDate(Tag, generateRandomData.getPastDate(151 - 21));
+
+		/** Go to Calving screen */
+		farmerHomePage.waitForPageLoad();
+		new Helper_AppNavigation().goTo_addBreedingActivityScreenfromFarmerHomePage(Tag, "Calving");
+
+		/** Fill calving form */
+		if (data.get("calfResult").equalsIgnoreCase("Single")) {
+			addCalvingPage.select_CalfResultSingle(data.get("calfResult"), data.get("calfGender1"));
+		} else {
+			addCalvingPage.select_CalfResultTwins(data.get("calfResult"), data.get("calfGender1"),
+					data.get("calfGender2"));
+		}
+		addCalvingPage.enter_CalvingDate(generateRandomData.getPastDate(15));
+		addCalvingPage.press_SaveButton();
+		addCalvingPage.assertWarning(data.get("warningMessage"));
+
+	}
+
+	@Test(dataProvider = "getData", dataProviderClass = DataProviderUtils.class)
+	public void AddCalving_NoPDActivity(Map<String, String> data) throws Throwable {
+
+		/** Register cattle */
+		String url = prop.getProperty("APIbaseUrl");
+		RegisterMilkingCattle reg = new RegisterMilkingCattle();
+		String Tag = reg.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
+		/** Add insemination for the cattle for the given date */
+		farmerHomePage.waitForPageLoad();
+		new HelperFunctions().Insemination_ForGivenDate(Tag, generateRandomData.getPastDate(151));
+
+		/** Go to Calving screen */
+		farmerHomePage.waitForPageLoad();
+		new Helper_AppNavigation().goTo_addBreedingActivityScreenfromFarmerHomePage(Tag, "Calving");
+		addCalvingPage.enter_CalvingDate(generateRandomData.getPastDate(0));
+		addCalvingPage.press_SaveButton();
+		addCalvingPage.assertAlert(data.get("warningMessage"));
+
+	}
+	
+	@Test(dataProvider = "getData", dataProviderClass = DataProviderUtils.class)
+	public void AddCalving_NoInsemination(Map<String, String> data) throws Throwable {
+
+		/** Register cattle */
+		String url = prop.getProperty("APIbaseUrl");
+		RegisterMilkingCattle reg = new RegisterMilkingCattle();
+		String Tag = reg.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
+		/** Add insemination for the cattle for the given date */
+//		farmerHomePage.waitForPageLoad();
+//		new HelperFunctions().Insemination_ForGivenDate(Tag, generateRandomData.getPastDate(151));
+
+		/** Go to Calving screen */
+		farmerHomePage.waitForPageLoad();
+		new Helper_AppNavigation().goTo_addBreedingActivityScreenfromFarmerHomePage(Tag, "Calving");
+		addCalvingPage.assertWarning(data.get("warningMessage"));
+
 	}
 
 }
