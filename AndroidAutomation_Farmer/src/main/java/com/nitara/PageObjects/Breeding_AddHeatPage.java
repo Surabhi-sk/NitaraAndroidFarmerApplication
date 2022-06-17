@@ -16,6 +16,9 @@ public class Breeding_AddHeatPage  extends BasePage{
 	@AndroidFindBy(id = "heatTime") 
 	private MobileElement heatTime;
 	
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
+	
 	@AndroidFindBy(id = "toggle_mode") 
 	private MobileElement timePicker;
 	
@@ -65,6 +68,10 @@ public class Breeding_AddHeatPage  extends BasePage{
 	
 	public void press_SaveButton() {
 		click(save_btn);	
+	}
+	public void assertWarning(String message) {
+		waitVisibility(warning_msg);
+		Assert.assertEquals(warning_msg.getText(),message);		
 	}
 	
 
