@@ -4,6 +4,8 @@ package com.nitara.PageObjects;
 import java.util.List;
 import java.util.Map;
 
+import org.testng.Assert;
+
 import com.nitara.Helper.GenerateRandomData;
 
 import io.appium.java_client.MobileElement;
@@ -16,7 +18,9 @@ public class Health_AddTreatmentPage extends BasePage{
 
 	@AndroidFindBy(id = "enterSymptomsTv") 
 	private MobileElement enterSymptoms;
-
+	
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
 
 	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
 	        ".scrollIntoView(new UiSelector().resourceIdMatches(\".*diseaseSpinner.*\"))") 
@@ -41,8 +45,7 @@ public class Health_AddTreatmentPage extends BasePage{
 	        ".scrollIntoView(new UiSelector().resourceIdMatches(\".*followUpToggle.*\"))")
 	private MobileElement followUp_toggle;
 
-	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
-	        ".scrollIntoView(new UiSelector().resourceIdMatches(\".*follow_up_after.*\"))")
+	@AndroidFindBy(id = "follow_up_after")
 	private MobileElement follow_up_after;
 
 	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
@@ -61,7 +64,7 @@ public class Health_AddTreatmentPage extends BasePage{
 
 	public void select_disease(String name) {
 		click(disease_dropdown);
-		List<MobileElement> diseaseList = (List<MobileElement>) driver.findElementsById("text1");
+		List<MobileElement> diseaseList = (List<MobileElement>) driver.findElementsById("android:id/text1");
 		for(int i=0;i<diseaseList.size()-1 ;i++ ) {
 			if(diseaseList.get(i).getText().equalsIgnoreCase(name)) {
 				diseaseList.get(i).click();
@@ -173,6 +176,10 @@ public class Health_AddTreatmentPage extends BasePage{
 		msg.assertSuccessMsg("Treatment");
 		msg.goToView();
 		
+	}
+	public void assertWarning(String message) {
+		waitVisibility(warning_msg);
+		Assert.assertEquals(warning_msg.getText(),message);		
 	}
 
 
