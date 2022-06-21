@@ -4,6 +4,7 @@ package com.nitara.PageObjects;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,6 +15,10 @@ import com.nitara.utils.TestUtils;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.bys.builder.AppiumByBuilder;
+
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.offset.PointOption;
 
 public class Housing_ShedViewPage extends BasePage 
 
@@ -117,6 +122,42 @@ public class Housing_ShedViewPage extends BasePage
 	
 	@AndroidFindBy(id = "txtValues")
 	private MobileElement cattlecountInGrp;
+	
+	@AndroidFindBy(id = "android:id/text1")
+	private MobileElement selectAShed;
+	
+	@AndroidFindBy(id = "moveCattleBtn")
+	private MobileElement move_cattle_btn2;
+	
+	@AndroidFindBy(id = "deleteBtn")
+	private MobileElement deleteBtn;
+	
+	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
+			+ "new UiSelector().text(\"" +"Open and Milking"+ "\"))") 
+	private MobileElement open_milking_group;
+	
+	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
+			+ "new UiSelector().text(\"" +"Early Milking"+ "\"))") 
+	private MobileElement early_milking_group;
+	
+	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
+			+ "new UiSelector().text(\"" +"ADD GROUP"+ "\"))") 
+	private MobileElement AddGrpToSmartShedBtn;
+	
+	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
+			+ "new UiSelector().text(\"" +"WARNING"+ "\"))") 
+	private MobileElement warning_for_movingcattle;
+	
+	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
+			+ "new UiSelector().text(\"" +"WARNING RESOLVED"+ "\"))") 
+	private MobileElement warning_resolved;
+	
+	public void movecattle(String shedname) throws InterruptedException {
+		click(move_cattle_btn2);
+		click(selectAShed);
+		driver.findElementByAndroidUIAutomator("new UiSelector().text(\""+shedname+"\")").click();
+		click(Savebtn);
+	}
 
 	
 	public void deleteAllExceptLastShed() throws InterruptedException {
@@ -249,6 +290,7 @@ public class Housing_ShedViewPage extends BasePage
 	
 	public void Searchshed(String shedname)
 	{
+		WebElement arrow = moverightarrow;
 		for(;;)
 		{
 				String actshedname =nameofshed.getText();
@@ -259,13 +301,14 @@ public class Housing_ShedViewPage extends BasePage
 					break;
 					
 				}
-				else if(moverightarrow.isDisplayed())
-				{
-					moverightarrow.click();
-				}
-				else
-				{
-					moveleftarrow.click();
+				else {
+					try {
+						arrow.click();
+					}
+					catch(Exception e) {
+						arrow = moveleftarrow;
+						arrow.click();
+					}
 				}
 				
 				
@@ -393,6 +436,50 @@ public class Housing_ShedViewPage extends BasePage
 	
 	public void clickSelectAll() {
 		click(chkSelectAll);
+	}
+
+
+	public void clickOpenandMilkingGroup() {
+		// TODO Auto-generated method stub
+		click(open_milking_group);
+	}
+
+
+	public void clickonAddGrpToSmartShedBtn() {
+		// TODO Auto-generated method stub
+		click(AddGrpToSmartShedBtn);
+	}
+
+
+	public void clickEarlyMilkingGroup() {
+		// TODO Auto-generated method stub
+		click(early_milking_group);
+	}
+
+
+	public void Movecattle_Warning() {
+		// TODO Auto-generated method stub
+		Assert.assertTrue(warning_for_movingcattle.isDisplayed());
+	}
+
+
+	public void resolveWarning() {
+		// TODO Auto-generated method stub
+		
+		//tap by coordinates
+        TouchAction touchAction = new TouchAction(driver);
+        touchAction.tap(PointOption.point(200, 600)).perform();
+        
+        click(deleteBtn);
+        
+        Assert.assertTrue(warning_resolved.isDisplayed());
+        
+	}
+
+
+	public void clickOnMoveCattleBtn() {
+		// TODO Auto-generated method stub
+		click(move_cattle_btn2);
 	}
 		
 
