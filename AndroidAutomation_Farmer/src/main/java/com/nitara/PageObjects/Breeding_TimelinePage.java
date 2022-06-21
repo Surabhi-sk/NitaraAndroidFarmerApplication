@@ -50,6 +50,9 @@ public class Breeding_TimelinePage extends BasePage{
 	@AndroidFindBy(id = "android:id/button1")
 	private MobileElement popup_Yes;
 	
+	@AndroidFindBy(id = "android:id/button2")
+	private MobileElement popup_No;
+	
 	@AndroidFindBy(id = "snackbar_text")
 	private MobileElement deleteMsg;
 	
@@ -64,14 +67,6 @@ public class Breeding_TimelinePage extends BasePage{
 	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
 	        ".scrollIntoView(new UiSelector().resourceIdMatches(\".*btnRemoveRight.*\"))") 
 	private MobileElement deleteBtnRight ;
-	
-	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
-	        ".scrollIntoView(new UiSelector().text(\"HEAT\"))") 
-	private MobileElement heat_entry ;
-	
-	public void assert_HeatEntry() throws Exception{
-		Assert.assertEquals(heat_entry.getText(), "HEAT");
-	}
 	
 	public void click_AddActivity() throws Exception {
 		click(addActivity_Btn);
@@ -124,9 +119,16 @@ public class Breeding_TimelinePage extends BasePage{
 	    	waitVisibility(popup_Yes);
 	    	click(popup_Yes);
 	    }
+	   public void press_NoBtn() throws Exception {
+	    	waitVisibility(popup_No);
+	    	click(popup_No);
+	    }
 	   public void assertDeleteMsg(String activity, String date) {
 		   waitVisibility(deleteMsg);
 		   Assert.assertEquals(deleteMsg.getText(),activity+" data recorded on "+date+" has been deleted");
+	   }
+	   public void assertMsg(String date) {
+		   Assert.assertEquals(checkDateLeft.getText(),date);
 	   }
 
 	public void getId() {
@@ -168,6 +170,10 @@ public class Breeding_TimelinePage extends BasePage{
 //		Assert.assertEquals(List1.get(19).getText(),date);
 
 		
+	}
+	
+	public void assert_HeatEntry() {
+		Assert.assertEquals(heat_btn.getText(),"HEAT");	
 	}
     
  
