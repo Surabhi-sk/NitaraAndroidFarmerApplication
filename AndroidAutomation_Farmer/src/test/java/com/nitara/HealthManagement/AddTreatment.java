@@ -19,7 +19,7 @@ public class AddTreatment  extends GenericBase{
 		String url = prop.getProperty("APIbaseUrl");
 		RegisterMilkingCattle reg = new RegisterMilkingCattle();
 		String Tag = reg.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
-		
+		Thread.sleep(10000);
 		/** In this function -
 		 * Reach the add health activity page for the cattle 
 		 * Reach the add health activity page for the registered cattle
@@ -66,9 +66,151 @@ public class AddTreatment  extends GenericBase{
 		*/	
 		healthRecordSuccessPage.captureScreenshots("AddTreatment");
 		healthRecordSuccessPage.assertSuccessMsg("Treatment");
+	}
+	
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void AddTreatment_MandatoryDiseaseField(Map<String,String> data) throws Throwable {
 		
+		/** Register cattle */
+		String url = prop.getProperty("APIbaseUrl");
+		RegisterMilkingCattle reg = new RegisterMilkingCattle();
+		String Tag = reg.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
+		farmerHomePage.waitForPageLoad();
+		new Helper_AppNavigation().goTo_addHealthActivityScreen(Tag,"Treatment");
 
+		/** Fill Treatment Form */
+		addTreatmentPage.click_symptomsPage(); // Select symptoms
 
+		//Select Symptoms
+		int count =  Integer.valueOf(data.get("symptomsCount"));
+		String[] symptomsList = new String[count];
+		for(int i=0;i<count;i++) {
+			symptomsList[i]= data.get("symptoms["+i+"]");
+		}
+		diseaseSymptoms.select_symptoms(symptomsList);
+		diseaseSymptoms.click_save();
 
+		// Select disease
+		//addTreatmentPage.select_disease(data.get("disease"));
+
+		addTreatmentPage.click_save();
+		addTreatmentPage.assertWarning(data.get("warningMessage"));
+	}
+	
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void AddTreatment_MandatorySymptomsField(Map<String,String> data) throws Throwable {
+		
+		/** Register cattle */
+		String url = prop.getProperty("APIbaseUrl");
+		RegisterMilkingCattle reg = new RegisterMilkingCattle();
+		String Tag = reg.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
+		farmerHomePage.waitForPageLoad();
+		new Helper_AppNavigation().goTo_addHealthActivityScreen(Tag,"Treatment");
+
+		// Select disease
+		addTreatmentPage.select_disease(data.get("disease"));
+
+		// Add Medicine - dosage
+		addTreatmentPage.click_addMedicine(); 
+		addTreatmentPage.enter_medicineName(data.get("medicine"));
+		addTreatmentPage.enter_medicineDosage(data.get("dosage"));
+
+		if(data.get("isAntibioticGiven").equalsIgnoreCase("true"))
+			addTreatmentPage.antibioticsGiven();
+
+		if(data.get("isFollowUpRequired").equalsIgnoreCase("true")) {
+			addTreatmentPage.followUpRequired();
+			addTreatmentPage.enter_followUpAfter(data.get("followUpAfter"));
+		}
+		addTreatmentPage.enter_amount(data.get("amount"));
+		addTreatmentPage.enter_date(generateRandomData.getPastDate(15));
+		addTreatmentPage.click_save();
+		addTreatmentPage.assertWarning(data.get("warningMessage"));
+	}
+	
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void AddTreatment_MandatoryFollowUp(Map<String,String> data) throws Throwable {
+		
+		/** Register cattle */
+		String url = prop.getProperty("APIbaseUrl");
+		RegisterMilkingCattle reg = new RegisterMilkingCattle();
+		String Tag = reg.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
+		new Helper_AppNavigation().goTo_addHealthActivityScreen(Tag,"Treatment");
+
+		/** Fill Treatment Form */
+		addTreatmentPage.click_symptomsPage(); // Select symptoms
+
+		//Select Symptoms
+		int count =  Integer.valueOf(data.get("symptomsCount"));
+		String[] symptomsList = new String[count];
+		for(int i=0;i<count;i++) {
+			symptomsList[i]= data.get("symptoms["+i+"]");
+		}
+		diseaseSymptoms.select_symptoms(symptomsList);
+		diseaseSymptoms.click_save();
+
+		// Select disease
+		addTreatmentPage.select_disease(data.get("disease"));
+
+		// Add Medicine - dosage
+		addTreatmentPage.click_addMedicine(); 
+		addTreatmentPage.enter_medicineName(data.get("medicine"));
+		addTreatmentPage.enter_medicineDosage(data.get("dosage"));
+
+		if(data.get("isAntibioticGiven").equalsIgnoreCase("true"))
+			addTreatmentPage.antibioticsGiven();
+
+		if(data.get("isFollowUpRequired").equalsIgnoreCase("true")) {
+			addTreatmentPage.followUpRequired();
+			//addTreatmentPage.enter_followUpAfter(data.get("followUpAfter"));
+		}
+		addTreatmentPage.enter_amount(data.get("amount"));
+		addTreatmentPage.enter_date(generateRandomData.getPastDate(15));
+		addTreatmentPage.click_save();
+		addTreatmentPage.assertWarning(data.get("warningMessage"));
+
+	}
+	
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void AddTreatment_BeforeDOB(Map<String,String> data) throws Throwable {
+		
+		/** Register cattle */
+		String url = prop.getProperty("APIbaseUrl");
+		RegisterMilkingCattle reg = new RegisterMilkingCattle();
+		String Tag = reg.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
+		Thread.sleep(8000);
+		new Helper_AppNavigation().goTo_addHealthActivityScreen(Tag,"Treatment");
+
+		/** Fill Treatment Form */
+		addTreatmentPage.click_symptomsPage(); // Select symptoms
+
+		//Select Symptoms
+		int count =  Integer.valueOf(data.get("symptomsCount"));
+		String[] symptomsList = new String[count];
+		for(int i=0;i<count;i++) {
+			symptomsList[i]= data.get("symptoms["+i+"]");
+		}
+		diseaseSymptoms.select_symptoms(symptomsList);
+		diseaseSymptoms.click_save();
+
+		// Select disease
+		addTreatmentPage.select_disease(data.get("disease"));
+
+		// Add Medicine - dosage
+		addTreatmentPage.click_addMedicine(); 
+		addTreatmentPage.enter_medicineName(data.get("medicine"));
+		addTreatmentPage.enter_medicineDosage(data.get("dosage"));
+
+		if(data.get("isAntibioticGiven").equalsIgnoreCase("true"))
+			addTreatmentPage.antibioticsGiven();
+
+		if(data.get("isFollowUpRequired").equalsIgnoreCase("true")) {
+			addTreatmentPage.followUpRequired();
+			addTreatmentPage.enter_followUpAfter(data.get("followUpAfter"));
+		}
+		addTreatmentPage.enter_amount(data.get("amount"));
+		addTreatmentPage.enter_date("13 May 2018");
+		addTreatmentPage.click_save();
+		addTreatmentPage.assertWarning(data.get("warningMessage"));
 	}
 }
