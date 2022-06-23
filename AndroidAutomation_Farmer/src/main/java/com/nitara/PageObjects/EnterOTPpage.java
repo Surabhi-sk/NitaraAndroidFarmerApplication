@@ -33,6 +33,9 @@ public class EnterOTPpage extends BasePage{
 	@AndroidFindBy(id = "otp_txt4") 
 	private MobileElement otp_txt4;
 	
+	@AndroidFindBy(id = "change_phone_number_btn") 
+	private MobileElement change_phone_number_btn;
+	
 	public void enter_otp(String otp) {
 
 		MobileElement[] arr = {otp_txt1, otp_txt2,otp_txt3,otp_txt4};
@@ -44,9 +47,25 @@ public class EnterOTPpage extends BasePage{
 		}
 	}
 	
+	public void enter_3digitotp(String otp) {
+
+		MobileElement[] arr = {otp_txt1, otp_txt2,otp_txt3};
+		int j =0;
+		for (MobileElement i : arr) {
+			char c = otp.charAt(j++);
+			int digit = c - '0';
+			sendKeys(i,digit);	
+		}
+	}
+	
 	public void click_ContinueBtn() {
 		click(continue_btn);
 
+	}
+
+	public void changePhoneNo() {
+		// TODO Auto-generated method stub
+		click(change_phone_number_btn);
 	}
 
 }

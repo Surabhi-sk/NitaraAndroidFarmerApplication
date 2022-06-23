@@ -11,7 +11,7 @@ public class Breeding_TimelinePage extends BasePage{
 	        ".scrollIntoView(new UiSelector().resourceIdMatches(\".*btnAddActivity.*\"))")
 	private MobileElement addActivity_Btn;
 	
-	@AndroidFindBy(id = "heatCardView")
+	@AndroidFindBy(id="tvTitleLeft")
 	private MobileElement heat_btn;
 	
 	@AndroidFindBy(id = "naturalBtn")
@@ -173,7 +173,7 @@ public class Breeding_TimelinePage extends BasePage{
 	}
 	
 	public void assert_HeatEntry() {
-		Assert.assertEquals(heat_btn.getText(),"HEAT");	
+		Assert.assertEquals(heat_btn.getText(),"HEAT");
 	}
     
  

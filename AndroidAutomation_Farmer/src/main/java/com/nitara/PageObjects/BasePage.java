@@ -2,6 +2,7 @@ package com.nitara.PageObjects;
 
 import io.appium.java_client.*;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.touch.offset.PointOption;
 
@@ -16,6 +17,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
 import com.nitara.utils.DriverManager;
 import com.nitara.utils.TestUtils;
 import java.io.File;
@@ -254,6 +257,13 @@ public class BasePage {
 		
 		driver.pushFile(remote, new File(file));
 		System.out.println("File Pushed");
+	}
+	
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
+	
+	public void assertWarningMsg(String msg) {
+		Assert.assertEquals(warning_msg.getText(), msg);
 	}
 
 

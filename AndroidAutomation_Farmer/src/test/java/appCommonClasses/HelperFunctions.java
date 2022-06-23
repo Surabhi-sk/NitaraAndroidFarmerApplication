@@ -192,7 +192,7 @@ public class HelperFunctions extends PageInitialiser{
 		//		if(data.get("isCrossBreed").equalsIgnoreCase("true")) {
 		//			registerMilkingCattlePage.select_crossbreedToggle(data.get("isCrossBreed"), data.get("crossedWith"));}
 
-		registerMilkingCattlePage.select_Lactation(data.get("currentLactation"));
+		//registerMilkingCattlePage.select_Lactation(data.get("currentLactation"));
 		registerMilkingCattlePage.enter_Calvingdate(data.get("lastCalvingDate"));
 		//		registerMilkingCattlePage.enter_CalfCount(data.get("calfCount"));
 		//		registerMilkingCattlePage.enter_Calf1Gender(data.get("calf1Gender"));
