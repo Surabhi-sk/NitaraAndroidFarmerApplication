@@ -71,7 +71,7 @@ public class Housing_CreateShed extends BasePage {
 	
 	
 	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
-			+ "new UiSelector().resourceIdMatches(\"" +"create_smart_shed_btn"+ "\"))")  
+			+ "new UiSelector().text(\"" +"CREATE SMART SHED"+ "\"))")  
 	private MobileElement createsmartshedbtn;
 	
 	@AndroidFindBy(id = "menu2") 
@@ -102,6 +102,14 @@ public class Housing_CreateShed extends BasePage {
 	
 	@AndroidFindBy(id = "snackbar_text")
 	private MobileElement warning_msg;
+	
+	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
+			+ "new UiSelector().text(\"" +"Late Milking"+ "\"))") 
+	private MobileElement late_milking_group;
+	
+	public void ClickLateMilkingGroup() throws InterruptedException{
+		click(late_milking_group);
+	}
 	
 	public void Clickhousingbtn() throws InterruptedException
 	{
@@ -291,9 +299,7 @@ public class Housing_CreateShed extends BasePage {
 	
 	public void clickcreatesmartshedbtn()
 	{
-		scrollfindElement("CREATE SMART SHED");
-				click(createsmartshedbtn);
-		
+		click(createsmartshedbtn);		
 		
 	}
 	
