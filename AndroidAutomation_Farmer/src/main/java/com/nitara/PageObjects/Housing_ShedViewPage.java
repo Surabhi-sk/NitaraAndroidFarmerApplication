@@ -2,6 +2,7 @@ package com.nitara.PageObjects;
 
 
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -152,10 +153,15 @@ public class Housing_ShedViewPage extends BasePage
 			+ "new UiSelector().text(\"" +"WARNING RESOLVED"+ "\"))") 
 	private MobileElement warning_resolved;
 	
+	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
+			+ "new UiSelector().text(\"" +"Late Milking"+ "\"))") 
+	private MobileElement late_milking_group;
+	
 	public void movecattle(String shedname) throws InterruptedException {
 		click(move_cattle_btn2);
 		click(selectAShed);
-		driver.findElementByAndroidUIAutomator("new UiSelector().text(\""+shedname+"\")").click();
+		driver.findElementByAndroidUIAutomator("new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
+				+ "new UiSelector().text(\"" +shedname+ "\"))").click();
 		click(Savebtn);
 	}
 
@@ -169,6 +175,7 @@ public class Housing_ShedViewPage extends BasePage
 		 *  so check if the shed has cattle
 		 *  if no then delete shed directly
 		 *  if yes then move the cattle out
+		 *  if we r moving to smart shed then there might be conflict so warning may popup. In that case touch on the sceen and click sav btn.
 		**/
 		
 		while(! shed_no.getText().equals("1/1 ")) {
@@ -184,6 +191,14 @@ public class Housing_ShedViewPage extends BasePage
 				if(! number_of_cattle.equals("0")) {
 					click(move_cattle_btn);
 					click(Savebtn);
+					
+					List<WebElement> warning_bar=  (List<WebElement>) driver.findElementsByAndroidUIAutomator("new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("+ "new UiSelector().text(\"" +"WARNING"+ "\"))");
+					if(warning_bar.size()>0) {
+						TouchAction touchAction = new TouchAction(driver);
+				        touchAction.tap(PointOption.point(200, 600)).perform();
+				        click(Savebtn);
+					}
+					
 					click(gotoshedbtn);
 				}
 				else {
@@ -480,6 +495,12 @@ public class Housing_ShedViewPage extends BasePage
 	public void clickOnMoveCattleBtn() {
 		// TODO Auto-generated method stub
 		click(move_cattle_btn2);
+	}
+
+
+	public void ClickLateMilkingGroup() {
+		// TODO Auto-generated method stub
+		click(late_milking_group);
 	}
 		
 

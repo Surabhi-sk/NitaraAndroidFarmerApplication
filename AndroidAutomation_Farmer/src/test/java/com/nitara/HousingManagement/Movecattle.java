@@ -216,7 +216,7 @@ public class Movecattle extends GenericBase
 		shedViewPage.clickonAddGrpToSmartShedBtn();
 	
 		/** Select Group */
-		shedViewPage.ClickGroup();
+		shedViewPage.ClickLateMilkingGroup();
 		
 		/** Select Add cattle to group */
 		shedViewPage.ClickAddCattleToGroupBtn();
@@ -264,7 +264,7 @@ public class Movecattle extends GenericBase
 		shedViewPage.clickonAddGrpToSmartShedBtn();
 	
 		/** Select Group */
-		shedViewPage.ClickGroup();
+		shedViewPage.ClickLateMilkingGroup();
 		
 		/** Select Add cattle to group */
 		shedViewPage.ClickAddCattleToGroupBtn();
