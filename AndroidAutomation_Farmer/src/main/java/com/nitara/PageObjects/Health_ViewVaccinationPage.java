@@ -36,6 +36,9 @@ public class Health_ViewVaccinationPage extends BasePage{
 	
 	@AndroidFindBy(id = "android:id/button1") 
 	private MobileElement yes_button;
+	
+	@AndroidFindBy(id = "android:id/button2") 
+	private MobileElement no_button;
 
 	public void assert_Dosage(String dosagev) {
 		Assert.assertEquals(dosage,dosagev+".0 ml");
@@ -44,6 +47,10 @@ public class Health_ViewVaccinationPage extends BasePage{
 	public void click_yes() {
 		waitVisibility(yes_button);
 		yes_button.click();
+	}
+	public void click_no() {
+		waitVisibility(no_button);
+		no_button.click();
 	}
 
 	public void click_editVaccination() {
@@ -68,7 +75,9 @@ public class Health_ViewVaccinationPage extends BasePage{
 	public void assert_deleteMsg(String vaccine,String date) {
 		Assert.assertEquals(snackbar_text.getText()," "+vaccine+" vaccination activity recorded on "+date+" has been deleted for this Cattle");
 	}
-	
+	public void assert_vaccination() {
+		Assert.assertEquals(Add_Vaccination.getText(),"ADD VACCINATION DATA");
+	}
 	
 	public void select_viewMore() {
 		waitVisibility(viewMore);
