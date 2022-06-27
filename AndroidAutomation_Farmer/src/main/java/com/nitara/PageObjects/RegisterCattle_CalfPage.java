@@ -14,6 +14,8 @@ public class RegisterCattle_CalfPage extends BasePage{
 	@AndroidFindBy(id = "phone_number") 
 	private MobileElement phone_number;
 	
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
 	
 	@AndroidFindBy(id = "earTagNumberOrName") 
 	private MobileElement TagNumber;
@@ -123,6 +125,10 @@ public class RegisterCattle_CalfPage extends BasePage{
 	
 	public void press_SaveButton() {
 		click(save_btn);	
+	}
+	public void assertWarning(String message) {
+		waitVisibility(warning_msg);
+		Assert.assertEquals(warning_msg.getText(),message);		
 	}
 
 }
