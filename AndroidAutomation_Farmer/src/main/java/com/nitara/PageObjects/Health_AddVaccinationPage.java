@@ -4,13 +4,22 @@ import java.util.List;
 import java.util.Map;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class Health_AddVaccinationPage extends BasePage{
 
-	@AndroidFindBy(id = "amountValue") 
+	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
+			+ "new UiSelector().resourceIdMatches(\".*amountValue.*\"))") 
 	private MobileElement amount;
+	
+	@AndroidFindBy(id = "alertTitle") 
+	private MobileElement alert;
+	
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
 
 	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
 	        ".scrollIntoView(new UiSelector().resourceIdMatches(\".*saveBtn.*\"))")
@@ -21,18 +30,37 @@ public class Health_AddVaccinationPage extends BasePage{
 	        ".scrollIntoView(new UiSelector().resourceIdMatches(\".*dateValue.*\"))")
 	private MobileElement vaccinationDate;
 	
+	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
+	        ".scrollIntoView(new UiSelector().resourceIdMatches(\".*checkbox.*\"))")
+	private MobileElement checkbox;
+	
 
 	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
 	        ".scrollIntoView(new UiSelector().resourceIdMatches(\".*vaccineDosageValue.*\"))") 
 	private MobileElement dosage;
 	
+	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
+	        ".scrollIntoView(new UiSelector().resourceIdMatches(\".*addCattle.*\"))") 
+	private MobileElement addCattle;
+	
+	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
+	        ".scrollIntoView(new UiSelector().resourceIdMatches(\".*continueBtn.*\"))") 
+	private MobileElement continueBtn;
 
 
 	public void enter_vaccinationDate(String date) {
 		vaccinationDate.clear();
 		sendKeys(vaccinationDate,date);
 	}
-
+	public void click_addCattle() {
+		click(addCattle);
+	}
+	public void click_continue() {
+		click(continueBtn);
+	}
+	public void click_checkbox() {
+		click(checkbox);
+	}
 
 
 	public void deselect_Vaccination() {
@@ -90,6 +118,14 @@ public class Health_AddVaccinationPage extends BasePage{
 		Health_SuccessPage msg = new Health_SuccessPage();
 		msg.assertSuccessMsg("Vaccination");
 		msg.goToView();
+	}
+	public void assertWarning(String message) {
+		waitVisibility(warning_msg);
+		Assert.assertEquals(warning_msg.getText(),message);		
+	}
+	public void assertAlert(String message) {
+		waitVisibility(alert);
+		Assert.assertEquals(alert.getText(),message);		
 	}
 
 }
