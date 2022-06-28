@@ -44,7 +44,6 @@ public class Helper_AppNavigation extends PageInitialiser{
 
 		goTo_CattleProfileSelectActivity(Tag, "Breeding");
 
-		breedingTimelinePage.waitForPageLoad();
 		breedingTimelinePage.click_AddActivity();
 
 	}
@@ -56,7 +55,6 @@ public class Helper_AppNavigation extends PageInitialiser{
 
 		
 		/** Breeding Activities listed - Select activity */
-		breedingActivityListPage.waitForPageLoad();
 		breedingActivityListPage.select_Activity(activity);
 	}
 
