@@ -13,6 +13,12 @@ public class BCS_AddBCSPage extends  BasePage {
 		@AndroidFindBy(id = "bcs_slider") 
 		private MobileElement Bcs_slider;
 		
+		@AndroidFindBy(id = "snackbar_text")
+		private MobileElement warning_msg;
+		
+		@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
+		        ".scrollIntoView(new UiSelector().resourceIdMatches(\".*home.*\"))") 
+		private MobileElement home ;
 		
 		@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
 				+ "new UiSelector().resourceIdMatches(\".*bcsDate.*\"))")  
@@ -21,7 +27,6 @@ public class BCS_AddBCSPage extends  BasePage {
 		@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
 				+ "new UiSelector().resourceIdMatches(\".*saveBtn.*\"))")  
 		private MobileElement save_btn;
-		
 		
 		@AndroidFindBy(id = "skip_btn") 
 		private MobileElement skip_btn;
@@ -97,6 +102,14 @@ public class BCS_AddBCSPage extends  BasePage {
 			 press_SaveButton();
 			 Clickgobacktoviewbcs();
 			 
+		}
+		public void homeButton() {
+			waitForVisibility(home);
+			click(home);
+		}
+		public void assertWarning(String message) {
+			waitVisibility(warning_msg);
+			Assert.assertEquals(warning_msg.getText(),message);		
 		}
 
 }
