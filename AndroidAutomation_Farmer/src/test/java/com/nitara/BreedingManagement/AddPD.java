@@ -18,6 +18,8 @@ public class AddPD extends GenericBase{
 		String url = prop.getProperty("APIbaseUrl");
 		RegisterMilkingCattle reg = new RegisterMilkingCattle();
 		String Tag = reg.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
+		
+
 
 		/** Add insemination for the cattle for the given date */
 		new HelperFunctions().Insemination_ForGivenDate(Tag,generateRandomData.getPastDate(40));
@@ -34,5 +36,74 @@ public class AddPD extends GenericBase{
 		breedingSuccessPage.captureScreenshots("AddPD");
 		breedingSuccessPage.cattletag_Assert(Tag);
 	}
+	
+	@Test(groups="Regression",dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void PD_NoInseminationData(Map<String,String> data) throws Throwable {
+		
+		/** Register cattle */
+		String url = prop.getProperty("APIbaseUrl");
+		RegisterMilkingCattle reg = new RegisterMilkingCattle();
+		String Tag = reg.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
+		
 
+
+		/** Go to PD screen */
+		new Helper_AppNavigation().goTo_addBreedingActivityScreenfromFarmerHomePage(Tag,"pd");
+
+		/** Assert warning message */
+		addPDPage.assertWarningMsg(data.get("warningMessage"));
+	}
+
+	@Test(groups="Regression",dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void PD_PDdateWithin21DaysOfInseminationdate(Map<String,String> data) throws Throwable {
+		
+		/** Register cattle */
+		String url = prop.getProperty("APIbaseUrl");
+		RegisterMilkingCattle reg = new RegisterMilkingCattle();
+		String Tag = reg.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
+		
+
+
+		/** Add insemination for the cattle for the given date */
+		new HelperFunctions().Insemination_ForGivenDate(Tag,generateRandomData.getPastDate(20));
+
+		/** Go to PD screen */
+		new Helper_AppNavigation().goTo_addBreedingActivityScreenfromFarmerHomePage(Tag,"pd");
+
+		addPDPage.enter_PDdate(generateRandomData.getPastDate(0));
+		addPDPage.press_SaveButton();
+
+		/** Assert warning */
+		addPDPage.assertWarningMsg(data.get("warningMessage"));
+	}
+	
+	@Test(groups="Regression",dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void PD_PDdateWithin21DaysOfPDdate(Map<String,String> data) throws Throwable {
+		
+		/** Register cattle */
+		String url = prop.getProperty("APIbaseUrl");
+		RegisterMilkingCattle reg = new RegisterMilkingCattle();
+		String Tag = reg.registerMilkingOrDryCattle(url,"RegisterMilkingOrDryCattle");
+		
+
+
+		/** Add insemination for the cattle for the given date */
+		new HelperFunctions().Insemination_ForGivenDate(Tag,generateRandomData.getPastDate(42));
+
+		/** Go to PD screen */
+		new Helper_AppNavigation().goTo_addBreedingActivityScreenfromFarmerHomePage(Tag,"pd");
+
+		addPDPage.enter_PDdate(generateRandomData.getPastDate(20));
+		addPDPage.press_SaveButton();
+		breedingSuccessPage.homeButton();
+		
+		/** Go to PD screen */
+		new Helper_AppNavigation().goTo_addBreedingActivityScreenfromFarmerHomePage(Tag,"pd");
+
+		addPDPage.enter_PDdate(generateRandomData.getPastDate(0));
+		addPDPage.press_SaveButton();
+
+		/** Assert warning */
+		addPDPage.assertWarningMsg(data.get("warningMessage"));
+	}
 }
