@@ -19,17 +19,26 @@ public class Breeding_AddCalvingPage extends BasePage{
 	@AndroidFindBy(id = "maleRdBtn_single") 
 	private MobileElement Male_RdBtn;
 	
-	@AndroidFindBy(id = "alertTitle") 
-	private MobileElement alert;
-	
 	@AndroidFindBy(id = "femaleRdBtn_single") 
 	private MobileElement Female_RdBtn;
 	
-	@AndroidFindBy(id = "calvingTime") 
-	private MobileElement calvingTime;
-	
 	@AndroidFindBy(id = "abortedRdBtn_single") 
 	private MobileElement Aborted_RdBtn;
+	
+	@AndroidFindBy(id = "maleRdBtn_twins") 
+	private MobileElement maleRdBtn_twins;
+	
+	@AndroidFindBy(id = "femaleRdBtn_twins") 
+	private MobileElement femaleRdBtn_twins;
+	
+	@AndroidFindBy(id = "abortedRdBtn_twins") 
+	private MobileElement abortedRdBtn_twins;
+	
+	@AndroidFindBy(id = "alertTitle") 
+	private MobileElement alert;
+	
+	@AndroidFindBy(id = "calvingTime") 
+	private MobileElement calvingTime;
 	
 	@AndroidFindBy(id = "toggle_mode") 
 	private MobileElement timePicker;
@@ -108,21 +117,28 @@ public class Breeding_AddCalvingPage extends BasePage{
 		
 		
 		Twins_RdBtn.click();
-		if(Male_RdBtn.getText().equalsIgnoreCase(gender1) || Male_RdBtn.getText().equalsIgnoreCase(gender2))
+		if(Male_RdBtn.getText().equalsIgnoreCase(gender1))
 		{
 			Male_RdBtn.click();
 		}
-		
-		if(Female_RdBtn.getText().equalsIgnoreCase(gender1) || Female_RdBtn.getText().equalsIgnoreCase(gender2))
-		{
+		else if(Female_RdBtn.getText().equalsIgnoreCase(gender1)) {
 			Female_RdBtn.click();
 		}
-		
-		if(Aborted_RdBtn.getText().equalsIgnoreCase(gender1)|| Aborted_RdBtn.getText().equalsIgnoreCase(gender2))
-		{
+		else {
 			Aborted_RdBtn.click();
 		}
-
+		
+		if(maleRdBtn_twins.getText().equalsIgnoreCase(gender2))
+		{
+			maleRdBtn_twins.click();
+		}
+		else if(femaleRdBtn_twins.getText().equalsIgnoreCase(gender2)) {
+			femaleRdBtn_twins.click();
+		}
+		else {
+			abortedRdBtn_twins.click();
+		}
+		
 }
 	
 	public void press_SaveButton() {

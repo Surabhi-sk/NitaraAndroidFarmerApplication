@@ -52,11 +52,11 @@ public class Breeding_AddHeatPage  extends BasePage{
 	public void select_HeatType(String type) {
 		
 		if(type.equalsIgnoreCase("artificial")) {
-			natural_btn.click();
+			artificial_btn.click();
 		}
 		
 		else {
-			artificial_btn.click();
+			natural_btn.click();
 		}
 	}
 	
