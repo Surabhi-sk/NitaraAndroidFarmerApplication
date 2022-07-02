@@ -19,6 +19,9 @@ public class Breeding_SuccessPage extends BasePage{
 	@AndroidFindBy(id = "record_another_cattle") 
 	private MobileElement record_another;
 	
+	@AndroidFindBy(id = "com.nitara.farmer.qa:id/back_text") 
+	private MobileElement back_to_cattleProfile;
+	
 	public void click_BackToBreedingTimeline() {
 		click(backto_viewBreeding);
 	}
@@ -35,6 +38,11 @@ public class Breeding_SuccessPage extends BasePage{
 	public void homeButton() {
 		waitForVisibility(home);
 		click(home);
+	}
+
+	public void click_BackToCattleProfile() {
+		// TODO Auto-generated method stub
+		click(back_to_cattleProfile);
 	}
 	
 
