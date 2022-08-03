@@ -2,6 +2,8 @@ package com.nitara.PageObjects;
 
 import java.util.List;
 
+import org.testng.Assert;
+
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
@@ -12,6 +14,9 @@ public class Milking_RecordFarmMilkingPage extends BasePage{
 	
 	@AndroidFindBy(id = "dateValue") 
 	private MobileElement date_et;
+	
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
 	
 	@AndroidFindBy(id = "fatValue") 
 	private MobileElement fat_et;
@@ -37,6 +42,8 @@ public class Milking_RecordFarmMilkingPage extends BasePage{
 	public void enter_snf(String snf) {
 		sendKeys(snf_et, snf);
 	}
+	
+	
 	
 	public void enter_fat(String fat) {
 		sendKeys(fat_et, fat);
@@ -65,6 +72,10 @@ public class Milking_RecordFarmMilkingPage extends BasePage{
 		
 		public void saveFarmMilkingDetails() {
 			click(save_btn);
+		}
+		public void assertWarning(String message) {
+			waitVisibility(warning_msg);
+			Assert.assertEquals(warning_msg.getText(),message);		
 		}
 
 	
