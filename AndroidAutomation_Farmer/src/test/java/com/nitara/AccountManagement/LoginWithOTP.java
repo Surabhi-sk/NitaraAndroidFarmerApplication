@@ -32,4 +32,158 @@ public class LoginWithOTP extends GenericBase{
 		
 	}
 
+	@Test(groups = {"Regression"}, dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void LoginwithOTP_LessThan4Digits(Map<String,String> data) throws Exception{
+
+		/** Select Language */
+		chooseLanguagePage.waitForSmallPageLoad();
+		chooseLanguagePage.select_Language("ENGLISH");
+		chooseLanguagePage.click_skipBtn(); // Skip Tutorial
+
+		/** Enter Phone Number */
+		enterPhoneNoPage.waitForSmallPageLoad();
+		enterPhoneNoPage.enter_PhoneNo("2270722909");
+		enterPhoneNoPage.click_continue();
+
+		/** Enter PIN */
+		enterPinPage.waitForPageLoad();
+		enterPinPage.click_loginWithOtpBtn();
+
+		/** Enter OTP */
+		enterOTPpage.waitForSmallPageLoad();
+		enterOTPpage.enter_otp("111 ");
+		enterOTPpage.click_ContinueBtn();
+
+
+		/** Assert Warning Message */
+		WarningPage.captureScreenshots("Login with OTP less than 4 digits");
+		WarningPage.assertWarningMsg(data.get("warningMessage"));
+	}
+
+	@Test(groups = {"Regression"}, dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void LoginwithOTP_IncorrectOTP(Map<String,String> data) throws Exception{
+
+		/** Select Language */
+		chooseLanguagePage.waitForSmallPageLoad();
+		chooseLanguagePage.select_Language("ENGLISH");
+		chooseLanguagePage.click_skipBtn(); // Skip Tutorial
+
+		/** Enter Phone Number */
+		enterPhoneNoPage.waitForSmallPageLoad();
+		enterPhoneNoPage.enter_PhoneNo("2270722909");
+		enterPhoneNoPage.click_continue();
+
+		/** Enter PIN */
+		enterPinPage.waitForPageLoad();
+		enterPinPage.click_loginWithOtpBtn();
+
+		/** Enter OTP */
+		enterOTPpage.waitForSmallPageLoad();
+		enterOTPpage.enter_otp("1234");
+		enterOTPpage.click_ContinueBtn();
+
+
+		/** Assert Warning Message */
+		WarningPage.captureScreenshots("Login with Incorrect OTP");
+		WarningPage.assertWarningMsg(data.get("warningMessage"));
+
+	}
+
+	@Test(groups = {"Regression"}, dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void LoginWithOTP_30SecondsCounter() throws Exception{
+
+		/** Select Language */
+		chooseLanguagePage.waitForSmallPageLoad();
+		chooseLanguagePage.select_Language("ENGLISH");
+		chooseLanguagePage.click_skipBtn(); // Skip Tutorial
+
+		/** Enter Phone Number */
+		enterPhoneNoPage.waitForSmallPageLoad();
+		enterPhoneNoPage.enter_PhoneNo("2270722909");
+		enterPhoneNoPage.click_continue();
+
+		/** Enter PIN */
+		enterPinPage.waitForPageLoad();
+		enterPinPage.click_loginWithOtpBtn();
+
+		/** Enter OTP */
+		enterOTPpage.waitForSmallPageLoad();
+		enterOTPpage.waitForResendOTPBtn();
+		enterOTPpage.click_ResendSMSBtn();
+
+		/**Assertions */
+		enterOTPpage.captureScreenshots("Navigated to Enter OTP page after clicking Resend OTP");
+		enterOTPpage.assert_enterOTPpage();
+
+	}
+
+	@Test(groups = {"Regression"}, dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void LoginWithOTP_ResendOTPMoreThanThreeTimesViaSMS(Map<String,String> data) throws Exception{
+
+		/** Select Language */
+		chooseLanguagePage.waitForSmallPageLoad();
+		chooseLanguagePage.select_Language("ENGLISH");
+		chooseLanguagePage.click_skipBtn(); // Skip Tutorial
+
+		/** Enter Phone Number */
+		enterPhoneNoPage.waitForSmallPageLoad();
+		enterPhoneNoPage.enter_PhoneNo("2270722909");
+		enterPhoneNoPage.click_continue();
+
+		/** Enter PIN */
+		enterPinPage.waitForPageLoad();
+		enterPinPage.click_loginWithOtpBtn();
+
+		/** Enter OTP */
+		enterOTPpage.waitForSmallPageLoad();
+		enterOTPpage.waitForResendOTPBtn();
+		enterOTPpage.click_ResendSMSBtn();
+		enterOTPpage.waitForResendOTPBtn();
+		enterOTPpage.click_ResendSMSBtn();
+		enterOTPpage.waitForResendOTPBtn();
+		enterOTPpage.click_ResendSMSBtn();
+		enterOTPpage.waitForResendOTPBtn();
+		enterOTPpage.click_ResendSMSBtn();
+		//	enterPhoneNoPage.waitForPageLoad();
+
+		/** Assert Warning Message */
+		WarningPage.captureScreenshots("Login with OTP send SMS more than 3 times");
+		WarningPage.assertWarningMsg(data.get("warningMessage"));
+
+	}
+
+	@Test(groups = {"Regression"}, dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void LoginWithOTP_ResendOTPMoreThanThreeTimesViaCall(Map<String,String> data) throws Exception{
+
+		/** Select Language */
+		chooseLanguagePage.waitForSmallPageLoad();
+		chooseLanguagePage.select_Language("ENGLISH");
+		chooseLanguagePage.click_skipBtn(); // Skip Tutorial
+
+		/** Enter Phone Number */
+		enterPhoneNoPage.waitForSmallPageLoad();
+		enterPhoneNoPage.enter_PhoneNo("2270722909");
+		enterPhoneNoPage.click_continue();
+
+		/** Enter PIN */
+		enterPinPage.waitForPageLoad();
+		enterPinPage.click_loginWithOtpBtn();
+
+		/** Enter OTP */
+		enterOTPpage.waitForSmallPageLoad();
+		enterOTPpage.waitForResendOTPBtn();
+		enterOTPpage.click_SendOTPViaCallBtn();
+		enterOTPpage.waitForResendOTPBtn();
+		enterOTPpage.click_SendOTPViaCallBtn();
+		enterOTPpage.waitForResendOTPBtn();
+		enterOTPpage.click_SendOTPViaCallBtn();
+		enterOTPpage.waitForResendOTPBtn();
+		enterOTPpage.click_SendOTPViaCallBtn();
+		enterPhoneNoPage.waitForPageLoad();
+
+		/** Assert Warning Message */
+		WarningPage.captureScreenshots("Login with OTP send OTP via call more than 3 times");
+		WarningPage.assertWarningMsg(data.get("warningMessage"));
+
+	}
 }
